@@ -1,6 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
+/* Tailwind component: surface-card
+   Uses @apply so Tailwind includes these utilities as a named component.
+*/
+@layer components {
+  .surface-card {
+    /* `group` is a marker utility (no CSS) and cannot be @apply'ed; keep it as a class on the wrapper when needed. */
+    /* Use a slightly darker dark background to reduce the 'too white' appearance in dark mode. */
+    @apply relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900/80 p-6 md:p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  /* compact variant used for smaller cards (timeline, skill boxes, etc.) */
+  .surface-card-sm {
+    @apply w-full relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900/85 p-5 shadow-sm transition-colors duration-200;
+  }
+
+  /* contact / action card variant keeps layout utilities on the element (flex, spacing)
+     so we only provide surface visuals here. Keep adding `group` on the element when
+     child `group-hover:` rules are needed. */
+  .surface-card-contact {
+    @apply rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900/85 p-5 transition-all duration-300 hover:border-gray-500 dark:hover:border-gray-500;
+  }
+}
+
 /* ===== Color scheme ===== */
 :root {
   color-scheme: light;
@@ -162,10 +185,9 @@ html:not(.dark) .dark\:bg-gray-900 {
 }
 
 /* ===== Light Mode Border Fixes ===== */
-html:not(.dark) .dark\:border-gray-700,
-html:not(.dark) .dark\:border-gray-800 {
-  border-color: rgb(229, 231, 235);
-}
+/* Removed: mapping dark: border utilities into light mode caused light-theme elements to get very faint borders
+   and override explicit light-mode border classes (e.g. border-gray-300). Let Tailwind's utility classes
+   apply directly instead to avoid unintended overrides. */
 
 /* ===== Light Mode Badge/Tag Fixes ===== */
 html:not(.dark) .bg-blue-50,
@@ -205,16 +227,13 @@ html:not(.dark) .dark\:text-purple-400 {
   color: rgb(107, 33, 168);
 }
 
-/* ===== Fix navbar specifically for light mode ===== */
+/* ===== Navbar (light mode) ===== */
 header {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  border-color: rgb(229, 231, 235) !important;
-}
-
-/* ===== Light Mode Navbar ===== */
-header {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  border-color: rgb(229, 231, 235) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  /* use a clearer light-mode border (gray-300) so it shows on white backgrounds */
+  border-color: rgb(209, 213, 219) !important;
+  /* subtle shadow to separate header from page content */
+  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.04);
 }
 
 header a {
@@ -247,8 +266,13 @@ header button:hover {
 
 /* ===== Dark Mode Navbar ===== */
 html.dark header {
-  background-color: rgba(28, 28, 28, 0.88) !important;
+  /* Force a dark, slightly translucent backdrop and ensure blur applies in dark mode.
+     Use !important to override utility classes that may still set a light background. */
+  background-color: rgba(28, 28, 28, 0) !important;
+  background-image: none !important;
   border-color: rgb(68, 68, 68) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
 html.dark header a {
@@ -275,36 +299,38 @@ html.dark header button:hover {
   background-color: rgb(46, 46, 46) !important;
 }
 
-/* ===== Shared Surface Tokens ===== */
+/* Shared surface tokens moved into Tailwind component layer above.
+   The raw fallbacks were removed to avoid duplicate/conflicting rules.
+   If you need non-Tailwind fallbacks for environments that don't run Tailwind,
+   we can add a small set of conservative CSS here. */
+
+/* Light-mode fallbacks for surface utility classes to ensure correct
+   appearance even if Tailwind utilities are missing or overridden. These
+   are intentionally low-specificity and conservative; they can be removed
+   later if you prefer relying purely on generated Tailwind CSS. */
 .surface-card {
-  background-color: rgba(255, 255, 255, 0.97) !important;
-  border-color: rgba(17, 17, 17, 0.08) !important;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background-color: rgb(255, 255, 255);
+  border-color: rgba(17, 17, 17, 0.08);
+}
+.surface-card-sm {
+  background-color: rgb(255, 255, 255);
+  border-color: rgba(17, 17, 17, 0.08);
+}
+.surface-card-contact {
+  background-color: rgb(255, 255, 255);
+  border-color: rgba(17, 17, 17, 0.08);
 }
 
-.surface-card:hover {
-  background-color: rgba(255, 255, 255, 0.99) !important;
-  border-color: rgba(17, 17, 17, 0.14) !important;
-}
-
+/* Dark-mode overrides — slightly darker than before to reduce glare */
 html.dark .surface-card {
-  background-color: rgba(255, 255, 255, 0.16) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
+  background-color: rgba(17, 17, 17, 0.8);
+  border-color: rgba(255, 255, 255, 0.14);
 }
-
-html.dark .surface-card:hover {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
+html.dark .surface-card-sm {
+  background-color: rgba(17, 17, 17, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
 }
-
-.surface-chip {
-  background-color: rgba(229, 231, 235, 0.85) !important;
-  color: rgb(31, 41, 55) !important;
-  border: 1px solid rgba(17, 17, 17, 0.08) !important;
-}
-
-html.dark .surface-chip {
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  color: rgb(232, 232, 232) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+html.dark .surface-card-contact {
+  background-color: rgba(17, 17, 17, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
 }

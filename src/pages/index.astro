@@ -6,7 +6,7 @@ import "../styles/global.css";
 <Layout>
   <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-16 font-sans">
     <header
-      class="sticky top-0 z-50 bg-white/85 dark:bg-neutral-900/80 backdrop-blur-md border-b border-gray-200 dark:border-neutral-700 py-3"
+      class="sticky top-0 z-50 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-3"
     >
       <div class="flex justify-between items-center">
         <a
@@ -17,7 +17,7 @@ import "../styles/global.css";
         <nav class="flex items-center gap-8">
           <a
             href="#work"
-            class="font-medium text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white relative group"
+            class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
           >
             Work
             <span
@@ -26,7 +26,7 @@ import "../styles/global.css";
           </a>
           <a
             href="#about"
-            class="font-medium text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white relative group"
+            class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
           >
             About
             <span
@@ -35,7 +35,7 @@ import "../styles/global.css";
           </a>
           <a
             href="#contact"
-            class="font-medium text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white relative group"
+            class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
           >
             Contact
             <span
@@ -44,7 +44,7 @@ import "../styles/global.css";
           </a>
           <button
             id="theme-toggle"
-            class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 transition-colors"
+            class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle theme"
           >
             <svg
@@ -81,7 +81,7 @@ import "../styles/global.css";
     </header>
 
     <section id="top" class="py-12 md:py-16">
-      <div class="w-full">
+      <div class="max-w-6xl mx-auto w-full">
         <div class="space-y-6">
           <h1
             class="text-4xl md:text-5xl font-bold font-display tracking-tight text-gray-900 dark:text-white leading-tight"
@@ -89,46 +89,22 @@ import "../styles/global.css";
             Karim Amiri
           </h1>
           <p
-            class="text-sm uppercase tracking-[0.35em] text-gray-600 dark:text-neutral-400"
+            class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400"
           >
             Software Engineer
           </p>
-          <p
-            class="text-xl text-gray-700 dark:text-neutral-200 leading-relaxed max-w-5xl"
-          >
+          <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
             Building scalable web and mobile applications with 4+ years of
             experience across fintech, AI, and healthcare domains. Specializing
             in React.js, Node.js, Flutter, and React Native to deliver
             exceptional digital experiences.
           </p>
-          <ul
-            class="space-y-3 text-sm text-gray-700 dark:text-neutral-200 max-w-5xl"
-          >
-            <li class="flex gap-3">
-              <span
-                class="mt-1 h-1.5 w-1.5 rounded-full bg-gray-500 dark:bg-neutral-600"
-              ></span>
-              <span
-                >Partnering with founders to translate product vision into
-                roadmaps and release plans.</span
-              >
-            </li>
-            <li class="flex gap-3">
-              <span
-                class="mt-1 h-1.5 w-1.5 rounded-full bg-gray-500 dark:bg-neutral-600"
-              ></span>
-              <span
-                >Architecting resilient systems with a calm, minimalist
-                aesthetic and measurable performance.</span
-              >
-            </li>
-          </ul>
           <div class="flex flex-wrap gap-4 pt-2">
             <a
               href="https://github.com/karim-coder"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center px-5 py-3 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-neutral-100 border border-transparent rounded-xl font-medium text-white dark:text-black shadow-md hover:shadow-lg transition-all duration-300 group"
+              class="inline-flex items-center justify-center px-5 py-3 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 border border-transparent rounded-xl font-medium text-white dark:text-gray-900 shadow-md hover:shadow-lg transition-all duration-300 group"
             >
               <svg
                 class="w-5 h-5 mr-2"
@@ -145,7 +121,7 @@ import "../styles/global.css";
             </a>
             <a
               href="mailto:ab.amiri484@gmail.com"
-              class="inline-flex items-center justify-center px-5 py-3 bg-white dark:bg-neutral-800/80 border border-gray-300 dark:border-neutral-600 hover:border-gray-400 dark:hover:border-neutral-500 rounded-xl font-medium text-gray-900 dark:text-white shadow-sm hover:shadow transition-all duration-300 group"
+              class="inline-flex items-center justify-center px-5 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 rounded-xl font-medium text-gray-900 dark:text-white shadow-sm hover:shadow transition-all duration-300 group"
             >
               <svg
                 class="w-5 h-5 mr-2"
@@ -170,11 +146,11 @@ import "../styles/global.css";
 
     <section
       id="work"
-      class="py-10 border-t border-gray-200 dark:border-neutral-800"
+      class="py-10 border-t border-gray-200 dark:border-gray-800"
     >
       <div class="mb-8 md:mb-10">
         <span
-          class="inline-block px-3 py-1 bg-gray-100 dark:bg-black text-gray-700 dark:text-neutral-200 rounded-full text-sm font-medium font-mono mb-3"
+          class="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-full text-sm font-medium font-mono mb-3"
           >Portfolio</span
         >
         <h2
@@ -182,18 +158,16 @@ import "../styles/global.css";
         >
           Selected Projects
         </h2>
-        <p class="mt-3 text-sm text-gray-700 dark:text-neutral-300 max-w-2xl">
+        <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
           A snapshot of recent collaborations across finance, healthcare, and
           learning — grounded in clarity, performance, and trust.
         </p>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <article
-          class="surface-card group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-neutral-800 p-6 md:p-8 shadow-[0_18px_42px_rgba(15,15,15,0.08)] dark:shadow-[0_26px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(15,15,15,0.12)] dark:hover:shadow-[0_32px_80px_rgba(0,0,0,0.45)]"
-        >
+        <article class="group surface-card">
           <div
-            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400"
           >
             <span>Fintech</span>
             <span>2024</span>
@@ -204,7 +178,7 @@ import "../styles/global.css";
             CryptoFlow
           </h3>
           <p
-            class="mt-3 text-sm text-gray-700 dark:text-neutral-200 leading-relaxed"
+            class="mt-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed"
           >
             Real-time trading platform featuring WebSocket infrastructure, risk
             analytics, and compliance workflows for regulated markets handling
@@ -212,27 +186,27 @@ import "../styles/global.css";
           </p>
           <div class="mt-5 flex flex-wrap gap-2">
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >React</span
             >
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >Node.js</span
             >
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >PostgreSQL</span
             >
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >WebSocket</span
             >
           </div>
           <div
-            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-neutral-800 pt-4"
+            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-gray-800 pt-4"
           >
             <span
-              class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400"
               >Featured</span
             >
             <span
@@ -255,11 +229,9 @@ import "../styles/global.css";
           </div>
         </article>
 
-        <article
-          class="surface-card group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-neutral-800 p-6 md:p-8 shadow-[0_18px_42px_rgba(15,15,15,0.08)] dark:shadow-[0_26px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(15,15,15,0.12)] dark:hover:shadow-[0_32px_80px_rgba(0,0,0,0.45)]"
-        >
+        <article class="group surface-card">
           <div
-            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400"
           >
             <span>Learning</span>
             <span>2024</span>
@@ -270,7 +242,7 @@ import "../styles/global.css";
             MindReader
           </h3>
           <p
-            class="mt-3 text-sm text-gray-700 dark:text-neutral-200 leading-relaxed"
+            class="mt-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed"
           >
             AI-guided learning experience with contextual prompts, progress
             analytics, and content authoring workflows tailored to enterprise
@@ -278,23 +250,23 @@ import "../styles/global.css";
           </p>
           <div class="mt-5 flex flex-wrap gap-2">
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >Next.js</span
             >
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >Python</span
             >
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >OpenAI</span
             >
           </div>
           <div
-            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-neutral-800 pt-4"
+            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-gray-800 pt-4"
           >
             <span
-              class="text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+              class="text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400"
               >Adaptive UX</span
             >
             <span
@@ -317,11 +289,9 @@ import "../styles/global.css";
           </div>
         </article>
 
-        <article
-          class="surface-card group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-neutral-800 p-6 md:p-8 shadow-[0_18px_42px_rgba(15,15,15,0.08)] dark:shadow-[0_26px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(15,15,15,0.12)] dark:hover:shadow-[0_32px_80px_rgba(0,0,0,0.45)]"
-        >
+        <article class="group surface-card">
           <div
-            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400"
           >
             <span>Healthcare</span>
             <span>2023</span>
@@ -332,7 +302,7 @@ import "../styles/global.css";
             HealthSync
           </h3>
           <p
-            class="mt-3 text-sm text-gray-700 dark:text-neutral-200 leading-relaxed"
+            class="mt-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed"
           >
             HIPAA-compliant telehealth platform with synchronized clinician and
             patient apps, offline-first data sync, and automated reporting for
@@ -340,23 +310,23 @@ import "../styles/global.css";
           </p>
           <div class="mt-5 flex flex-wrap gap-2">
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >React Native</span
             >
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >Express</span
             >
             <span
-              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              class="px-3 py-1 rounded-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-700 dark:text-gray-200"
               >AWS</span
             >
           </div>
           <div
-            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-neutral-800 pt-4"
+            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-gray-800 pt-4"
           >
             <span
-              class="text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+              class="text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400"
               >Offline first</span
             >
             <span
@@ -383,11 +353,11 @@ import "../styles/global.css";
 
     <section
       id="about"
-      class="py-10 border-t border-gray-200 dark:border-neutral-800"
+      class="py-10 border-t border-gray-200 dark:border-gray-800"
     >
       <div class="mb-8 md:mb-10">
         <span
-          class="inline-block px-3 py-1 bg-gray-100 dark:bg-black text-gray-700 dark:text-neutral-200 rounded-full text-sm font-medium font-mono mb-3"
+          class="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-full text-sm font-medium font-mono mb-3"
           >Background</span
         >
         <h2
@@ -399,27 +369,18 @@ import "../styles/global.css";
 
       <div class="relative">
         <div
-          class="absolute left-8 top-0 bottom-0 w-px bg-gray-200 dark:bg-neutral-800"
+          class="absolute left-5 top-0 bottom-0 w-px bg-gray-300 dark:bg-gray-700"
         >
         </div>
 
         <div class="space-y-8 md:space-y-12">
-          <div class="flex flex-row items-start gap-6 relative pl-20">
+          <div class="flex flex-row items-start gap-6 relative pl-12">
             <div
-              class="absolute left-7 top-1.5 w-3 h-3 bg-gray-900 dark:bg-white rounded-full border-4 border-white dark:border-neutral-900"
+              class="absolute left-5 top-1.5 w-3 h-3 transform -translate-x-1/2 bg-gray-900 dark:bg-white rounded-full border-2 border-gray-300 dark:border-gray-700 shadow-sm"
+              aria-hidden="true"
             >
             </div>
-            <div
-              class="absolute left-0 top-1 w-12 h-12 rounded-xl bg-gray-100 dark:bg-neutral-950 flex items-center justify-center"
-            >
-              <span
-                class="font-bold font-mono text-gray-700 dark:text-neutral-200"
-                >2023</span
-              >
-            </div>
-            <div
-              class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-5 shadow-[0_12px_35px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_45px_rgba(0,0,0,0.4)] w-full"
-            >
+            <div class="surface-card-sm">
               <div
                 class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
               >
@@ -429,11 +390,11 @@ import "../styles/global.css";
                   Independent Product Engineer
                 </h3>
                 <span
-                  class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400"
+                  class="text-sm font-medium font-mono text-gray-500 dark:text-gray-400"
                   >2023 — Present</span
                 >
               </div>
-              <ul class="space-y-2 text-gray-700 dark:text-neutral-200 text-sm">
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
                 <li class="flex items-start">
                   <span class="mr-2 mt-1">•</span>
                   <span
@@ -457,22 +418,13 @@ import "../styles/global.css";
             </div>
           </div>
 
-          <div class="flex flex-row items-start gap-6 relative pl-20">
+          <div class="flex flex-row items-start gap-6 relative pl-12">
             <div
-              class="absolute left-7 top-1.5 w-3 h-3 bg-gray-900 dark:bg-white rounded-full border-4 border-white dark:border-neutral-900"
+              class="absolute left-5 top-1.5 w-3 h-3 transform -translate-x-1/2 bg-gray-900 dark:bg-white rounded-full border-2 border-gray-300 dark:border-gray-700 shadow-sm"
+              aria-hidden="true"
             >
             </div>
-            <div
-              class="absolute left-0 top-1 w-12 h-12 rounded-xl bg-gray-100 dark:bg-neutral-950 flex items-center justify-center"
-            >
-              <span
-                class="font-bold font-mono text-gray-700 dark:text-neutral-200"
-                >2022</span
-              >
-            </div>
-            <div
-              class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-5 shadow-[0_12px_35px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_45px_rgba(0,0,0,0.4)] w-full"
-            >
+            <div class="surface-card-sm">
               <div
                 class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
               >
@@ -482,11 +434,11 @@ import "../styles/global.css";
                   Software Developer, GeekSynergy
                 </h3>
                 <span
-                  class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400"
+                  class="text-sm font-medium font-mono text-gray-500 dark:text-gray-400"
                   >2022 — 2023</span
                 >
               </div>
-              <ul class="space-y-2 text-gray-700 dark:text-neutral-200 text-sm">
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
                 <li class="flex items-start">
                   <span class="mr-2 mt-1">•</span>
                   <span
@@ -512,7 +464,7 @@ import "../styles/global.css";
       <div class="mt-14">
         <div class="mb-8">
           <span
-            class="inline-block px-3 py-1 bg-gray-100 dark:bg-black text-gray-700 dark:text-neutral-200 rounded-full text-sm font-medium font-mono mb-3"
+            class="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-full text-sm font-medium font-mono mb-3"
             >Technical Skills</span
           >
           <h2
@@ -523,14 +475,12 @@ import "../styles/global.css";
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-6 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)]"
-          >
+          <div class="surface-card-sm">
             <h3
               class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
             >
               <svg
-                class="w-5 h-5 mr-2 text-gray-900 dark:text-neutral-100"
+                class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -547,40 +497,38 @@ import "../styles/global.css";
             </h3>
             <div class="flex flex-wrap gap-2">
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >React.js</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Next.js</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >TypeScript</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >React Native</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Flutter</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Tailwind CSS</span
               >
             </div>
           </div>
 
-          <div
-            class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-6 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)]"
-          >
+          <div class="surface-card-sm">
             <h3
               class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
             >
               <svg
-                class="w-5 h-5 mr-2 text-gray-900 dark:text-neutral-100"
+                class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -597,40 +545,38 @@ import "../styles/global.css";
             </h3>
             <div class="flex flex-wrap gap-2">
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Node.js</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Express</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Python</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >PostgreSQL</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >MongoDB</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >GraphQL</span
               >
             </div>
           </div>
 
-          <div
-            class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-6 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)]"
-          >
+          <div class="surface-card-sm">
             <h3
               class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
             >
               <svg
-                class="w-5 h-5 mr-2 text-gray-900 dark:text-neutral-100"
+                class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -652,31 +598,31 @@ import "../styles/global.css";
             </h3>
             <div class="flex flex-wrap gap-2">
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >AWS</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Docker</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >CI/CD</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Git</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Jest</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Cypress</span
               >
               <span
-                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                class="px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium font-mono"
                 >Kubernetes</span
               >
             </div>
@@ -687,12 +633,12 @@ import "../styles/global.css";
 
     <section
       id="contact"
-      class="py-12 border-t border-gray-200 dark:border-neutral-800"
+      class="py-12 border-t border-gray-200 dark:border-gray-800"
     >
       <div class="max-w-6xl mx-auto">
         <div class="mb-10">
           <span
-            class="inline-block px-3 py-1 bg-gray-100 dark:bg-black text-gray-700 dark:text-neutral-200 rounded-full text-sm font-medium font-mono mb-3"
+            class="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 rounded-full text-sm font-medium font-mono mb-3"
             >Get in touch</span
           >
           <h2
@@ -700,20 +646,20 @@ import "../styles/global.css";
           >
             Let's build something meaningful together
           </h2>
-          <p class="text-gray-700 dark:text-neutral-200 mt-3 max-w-2xl">
+          <p class="text-gray-600 dark:text-gray-300 mt-3 max-w-2xl">
             Available for freelance projects and full-time opportunities. Expect
             a response within 24 hours.
           </p>
         </div>
 
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+        <div class="grid gap-4 md:grid-cols-3">
           <a
             href="mailto:ab.amiri484@gmail.com"
-            class="surface-card group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-neutral-800 p-5 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)] hover:-translate-y-1 hover:border-gray-500 dark:hover:border-neutral-600 transition-all duration-300"
+            class="group flex flex-col justify-between surface-card-contact"
           >
             <div>
               <div
-                class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400 mb-2"
+                class="text-sm font-medium font-mono text-gray-500 dark:text-gray-400 mb-2"
               >
                 Email
               </div>
@@ -722,10 +668,10 @@ import "../styles/global.css";
               </div>
             </div>
             <div
-              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200/80 dark:bg-neutral-800 transition-transform group-hover:scale-110"
+              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 transition-transform group-hover:scale-110"
             >
               <svg
-                class="w-5 h-5 text-gray-800 dark:text-neutral-200"
+                class="w-5 h-5 text-gray-700 dark:text-gray-200"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -745,11 +691,11 @@ import "../styles/global.css";
             href="https://github.com/karim-coder"
             target="_blank"
             rel="noopener noreferrer"
-            class="surface-card group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-neutral-800 p-5 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)] hover:-translate-y-1 hover:border-gray-500 dark:hover:border-neutral-600 transition-all duration-300"
+            class="group flex flex-col justify-between surface-card-contact"
           >
             <div>
               <div
-                class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400 mb-2"
+                class="text-sm font-medium font-mono text-gray-500 dark:text-gray-400 mb-2"
               >
                 GitHub
               </div>
@@ -758,10 +704,10 @@ import "../styles/global.css";
               </div>
             </div>
             <div
-              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200/80 dark:bg-neutral-800 transition-transform group-hover:scale-110"
+              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 transition-transform group-hover:scale-110"
             >
               <svg
-                class="w-5 h-5 text-gray-800 dark:text-neutral-200"
+                class="w-5 h-5 text-gray-700 dark:text-gray-200"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -775,47 +721,14 @@ import "../styles/global.css";
           </a>
 
           <a
-            href="https://twitter.com/karim_coder"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="surface-card group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-neutral-800 p-5 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)] hover:-translate-y-1 hover:border-gray-500 dark:hover:border-neutral-600 transition-all duration-300"
-          >
-            <div>
-              <div
-                class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400 mb-2"
-              >
-                X (Twitter)
-              </div>
-              <div class="text-gray-900 dark:text-white font-medium">
-                @karim_coder
-              </div>
-            </div>
-            <div
-              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200/80 dark:bg-neutral-800 transition-transform group-hover:scale-110"
-            >
-              <svg
-                class="w-5 h-5 text-gray-800 dark:text-neutral-200"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.5 3h3.34l3.96 5.52L15.81 3h3.13l-5.62 7.34L19.5 21h-3.34l-4.34-6.07L7.9 21H4.77l5.92-8.02L4.5 3z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-          </a>
-
-          <a
             href="https://linkedin.com/in/karim-amiri-34b915176"
             target="_blank"
             rel="noopener noreferrer"
-            class="surface-card group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-neutral-800 p-5 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)] hover:-translate-y-1 hover:border-gray-500 dark:hover:border-neutral-600 transition-all duration-300"
+            class="group flex flex-col justify-between surface-card-contact"
           >
             <div>
               <div
-                class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400 mb-2"
+                class="text-sm font-medium font-mono text-gray-500 dark:text-gray-400 mb-2"
               >
                 LinkedIn
               </div>
@@ -824,10 +737,10 @@ import "../styles/global.css";
               </div>
             </div>
             <div
-              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200/80 dark:bg-neutral-800 transition-transform group-hover:scale-110"
+              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 transition-transform group-hover:scale-110"
             >
               <svg
-                class="w-5 h-5 text-gray-800 dark:text-neutral-200"
+                class="w-5 h-5 text-gray-700 dark:text-gray-200"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
