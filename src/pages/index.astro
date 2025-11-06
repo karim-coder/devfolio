@@ -4,353 +4,839 @@ import "../styles/global.css";
 ---
 
 <Layout>
-  <main class="page">
-    <header class="site-header">
-      <a class="brand" href="#top">{"I<ARIM_"}</a>
-      <nav class="site-nav">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <button
-          id="theme-toggle"
-          class="theme-toggle"
-          type="button"
-          aria-label="Toggle theme"
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-16 font-sans">
+    <header
+      class="sticky top-0 z-50 bg-white/85 dark:bg-neutral-900/80 backdrop-blur-md border-b border-gray-200 dark:border-neutral-700 py-3"
+    >
+      <div class="flex justify-between items-center">
+        <a
+          href="#top"
+          class="text-2xl font-bold font-heading text-gray-900 dark:text-white tracking-tight hover:opacity-80 transition-opacity"
+          >KARIM</a
         >
-          <span class="theme-toggle__indicator"></span>
-        </button>
-      </nav>
-    </header>
-
-    <section id="top" class="hero">
-      <div class="hero__content">
-        <div class="hero__badge">Software Engineer</div>
-        <h1 class="hero__title">Karim Amiri</h1>
-        <p class="hero__description">
-          Building scalable web and mobile applications with 4+ years of
-          experience across fintech, AI, and healthcare domains. Specializing in
-          React.js, Node.js, Flutter, and React Native to deliver exceptional
-          digital experiences.
-        </p>
-        <div class="hero__cta">
+        <nav class="flex items-center gap-8">
           <a
-            class="btn btn--primary"
-            href="https://github.com/karim-coder"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#work"
+            class="font-medium text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white relative group"
+          >
+            Work
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#about"
+            class="font-medium text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white relative group"
+          >
+            About
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#contact"
+            class="font-medium text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white relative group"
+          >
+            Contact
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 transition-colors"
+            aria-label="Toggle theme"
           >
             <svg
-              class="btn-icon"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.306.76-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.313.469-2.383 1.235-3.222-.124-.304-.536-1.524.116-3.178 0 0 1.008-.322 3.301 1.229.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.551 3.297-1.229 3.297-1.229.653 1.654.242 2.874.118 3.178.77.839 1.235 1.909 1.235 3.222 0 4.61-2.807 5.625-5.479 5.922.43.372.824 1.102.824 2.222 0 1.605-.015 2.896-.015 3.286 0 .316.215.688.824.574C20.567 21.804 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-              ></path>
-            </svg>
-            GitHub
-          </a>
-          <a class="btn btn--secondary" href="mailto:ab.amiri484@gmail.com">
-            <svg
-              class="btn-icon"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
+              id="theme-icon-light"
+              class="w-5 h-5 text-gray-900 dark:hidden"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              viewBox="0 0 24 24"
             >
               <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
               ></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
-            Connect
-          </a>
-        </div>
+            <svg
+              id="theme-icon-dark"
+              class="w-5 h-5 text-white hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              ></path>
+            </svg>
+          </button>
+        </nav>
       </div>
-      <div class="hero__graphic">
-        <div class="graphic-element"></div>
-      </div>
-    </section>
+    </header>
 
-    <section id="work" class="work">
-      <div class="section-header">
-        <span class="section-label">Portfolio</span>
-        <h2 class="section-title">Selected Projects</h2>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card project-card--featured">
-          <div class="project-card__visual">
-            <div class="visual-pattern visual-pattern--1"></div>
-          </div>
-          <div class="project-card__content">
-            <div class="project-card__header">
-              <h3>CryptoFlow</h3>
-              <span class="project-card__year">2024</span>
-            </div>
-            <p class="project-card__description">
-              Real-time trading platform with WebSocket infrastructure, risk
-              analytics, and compliance workflows for regulated markets. Handles
-              10K+ concurrent connections.
-            </p>
-            <div class="project-card__stack">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>PostgreSQL</span>
-              <span>WebSocket</span>
-            </div>
-            <div class="project-card__label">Featured</div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-card__visual">
-            <div class="visual-pattern visual-pattern--2"></div>
-          </div>
-          <div class="project-card__content">
-            <div class="project-card__header">
-              <h3>MindReader</h3>
-              <span class="project-card__year">2024</span>
-            </div>
-            <p class="project-card__description">
-              AI learning platform with contextual guidance and analytics.
-              Custom prompt engineering with OpenAI integration.
-            </p>
-            <div class="project-card__stack">
-              <span>Next.js</span>
-              <span>Python</span>
-              <span>OpenAI</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-card__visual">
-            <div class="visual-pattern visual-pattern--3"></div>
-          </div>
-          <div class="project-card__content">
-            <div class="project-card__header">
-              <h3>HealthSync</h3>
-              <span class="project-card__year">2023</span>
-            </div>
-            <p class="project-card__description">
-              HIPAA-compliant telehealth platform with cross-platform mobile
-              apps and offline-first architecture.
-            </p>
-            <div class="project-card__stack">
-              <span>React Native</span>
-              <span>Express</span>
-              <span>AWS</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="section-header">
-        <span class="section-label">Background</span>
-        <h2 class="section-title">Professional Journey</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3 class="timeline-title">Independent Product Engineer</h3>
-              <span class="timeline-period">2023 — Present</span>
-            </div>
-            <ul class="timeline-details">
-              <li>
-                Building full-stack applications for startups across fintech,
-                AI, and healthcare
-              </li>
-              <li>
-                Delivered 15+ projects with focus on scalable architecture
-              </li>
-              <li>
-                Leading technical implementation from concept to production
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3 class="timeline-title">Software Developer · GeekSynergy</h3>
-              <span class="timeline-period">2022 — 2023</span>
-            </div>
-            <ul class="timeline-details">
-              <li>Maintained enterprise SaaS platforms with 99.9% uptime</li>
-              <li>
-                Reduced API latency by 40% through performance optimization
-              </li>
-              <li>Implemented RBAC for multi-tenant systems</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="skills-section">
-        <div class="section-header section-header--small">
-          <span class="section-label">Technical Skills</span>
-          <h2 class="section-title">My Expertise</h2>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3 class="skill-category-title">Frontend</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">React.js</span>
-              <span class="skill-tag">Next.js</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">React Native</span>
-              <span class="skill-tag">Flutter</span>
-              <span class="skill-tag">Tailwind CSS</span>
-              <span class="skill-tag">Astro</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-category-title">Backend</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Express</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">MongoDB</span>
-              <span class="skill-tag">GraphQL</span>
-              <span class="skill-tag">REST APIs</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-category-title">DevOps & Tools</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">AWS</span>
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">CI/CD</span>
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">Jest</span>
-              <span class="skill-tag">Cypress</span>
-              <span class="skill-tag">Kubernetes</span>
-            </div>
+    <section id="top" class="py-12 md:py-16">
+      <div class="w-full">
+        <div class="space-y-6">
+          <h1
+            class="text-4xl md:text-5xl font-bold font-display tracking-tight text-gray-900 dark:text-white leading-tight"
+          >
+            Karim Amiri
+          </h1>
+          <p
+            class="text-sm uppercase tracking-[0.35em] text-gray-600 dark:text-neutral-400"
+          >
+            Software Engineer
+          </p>
+          <p
+            class="text-xl text-gray-700 dark:text-neutral-200 leading-relaxed max-w-5xl"
+          >
+            Building scalable web and mobile applications with 4+ years of
+            experience across fintech, AI, and healthcare domains. Specializing
+            in React.js, Node.js, Flutter, and React Native to deliver
+            exceptional digital experiences.
+          </p>
+          <ul
+            class="space-y-3 text-sm text-gray-700 dark:text-neutral-200 max-w-5xl"
+          >
+            <li class="flex gap-3">
+              <span
+                class="mt-1 h-1.5 w-1.5 rounded-full bg-gray-500 dark:bg-neutral-600"
+              ></span>
+              <span
+                >Partnering with founders to translate product vision into
+                roadmaps and release plans.</span
+              >
+            </li>
+            <li class="flex gap-3">
+              <span
+                class="mt-1 h-1.5 w-1.5 rounded-full bg-gray-500 dark:bg-neutral-600"
+              ></span>
+              <span
+                >Architecting resilient systems with a calm, minimalist
+                aesthetic and measurable performance.</span
+              >
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a
+              href="https://github.com/karim-coder"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-5 py-3 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-neutral-100 border border-transparent rounded-xl font-medium text-white dark:text-black shadow-md hover:shadow-lg transition-all duration-300 group"
+            >
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              GitHub
+            </a>
+            <a
+              href="mailto:ab.amiri484@gmail.com"
+              class="inline-flex items-center justify-center px-5 py-3 bg-white dark:bg-neutral-800/80 border border-gray-300 dark:border-neutral-600 hover:border-gray-400 dark:hover:border-neutral-500 rounded-xl font-medium text-gray-900 dark:text-white shadow-sm hover:shadow transition-all duration-300 group"
+            >
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Connect
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="contact-card">
-        <div class="contact-card__header">
-          <span class="section-label">Get in touch</span>
-          <h2>Let's build something amazing together</h2>
-          <p>
-            Available for freelance projects and full-time opportunities. I
-            respond to all messages within 24 hours.
+    <section
+      id="work"
+      class="py-10 border-t border-gray-200 dark:border-neutral-800"
+    >
+      <div class="mb-8 md:mb-10">
+        <span
+          class="inline-block px-3 py-1 bg-gray-100 dark:bg-black text-gray-700 dark:text-neutral-200 rounded-full text-sm font-medium font-mono mb-3"
+          >Portfolio</span
+        >
+        <h2
+          class="text-3xl font-bold font-display text-gray-900 dark:text-white"
+        >
+          Selected Projects
+        </h2>
+        <p class="mt-3 text-sm text-gray-700 dark:text-neutral-300 max-w-2xl">
+          A snapshot of recent collaborations across finance, healthcare, and
+          learning — grounded in clarity, performance, and trust.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <article
+          class="surface-card group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-neutral-800 p-6 md:p-8 shadow-[0_18px_42px_rgba(15,15,15,0.08)] dark:shadow-[0_26px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(15,15,15,0.12)] dark:hover:shadow-[0_32px_80px_rgba(0,0,0,0.45)]"
+        >
+          <div
+            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+          >
+            <span>Fintech</span>
+            <span>2024</span>
+          </div>
+          <h3
+            class="mt-4 text-2xl font-bold font-display text-gray-900 dark:text-white"
+          >
+            CryptoFlow
+          </h3>
+          <p
+            class="mt-3 text-sm text-gray-700 dark:text-neutral-200 leading-relaxed"
+          >
+            Real-time trading platform featuring WebSocket infrastructure, risk
+            analytics, and compliance workflows for regulated markets handling
+            10K+ concurrent connections.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >React</span
+            >
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >Node.js</span
+            >
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >PostgreSQL</span
+            >
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >WebSocket</span
+            >
+          </div>
+          <div
+            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-neutral-800 pt-4"
+          >
+            <span
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+              >Featured</span
+            >
+            <span
+              class="inline-flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Case study
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M7 17L17 7M7 7h10v10"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article
+          class="surface-card group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-neutral-800 p-6 md:p-8 shadow-[0_18px_42px_rgba(15,15,15,0.08)] dark:shadow-[0_26px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(15,15,15,0.12)] dark:hover:shadow-[0_32px_80px_rgba(0,0,0,0.45)]"
+        >
+          <div
+            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+          >
+            <span>Learning</span>
+            <span>2024</span>
+          </div>
+          <h3
+            class="mt-4 text-2xl font-bold font-display text-gray-900 dark:text-white"
+          >
+            MindReader
+          </h3>
+          <p
+            class="mt-3 text-sm text-gray-700 dark:text-neutral-200 leading-relaxed"
+          >
+            AI-guided learning experience with contextual prompts, progress
+            analytics, and content authoring workflows tailored to enterprise
+            knowledge bases.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >Next.js</span
+            >
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >Python</span
+            >
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >OpenAI</span
+            >
+          </div>
+          <div
+            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-neutral-800 pt-4"
+          >
+            <span
+              class="text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+              >Adaptive UX</span
+            >
+            <span
+              class="inline-flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Workshop ready
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M7 17L17 7M7 7h10v10"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article
+          class="surface-card group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-neutral-800 p-6 md:p-8 shadow-[0_18px_42px_rgba(15,15,15,0.08)] dark:shadow-[0_26px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(15,15,15,0.12)] dark:hover:shadow-[0_32px_80px_rgba(0,0,0,0.45)]"
+        >
+          <div
+            class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+          >
+            <span>Healthcare</span>
+            <span>2023</span>
+          </div>
+          <h3
+            class="mt-4 text-2xl font-bold font-display text-gray-900 dark:text-white"
+          >
+            HealthSync
+          </h3>
+          <p
+            class="mt-3 text-sm text-gray-700 dark:text-neutral-200 leading-relaxed"
+          >
+            HIPAA-compliant telehealth platform with synchronized clinician and
+            patient apps, offline-first data sync, and automated reporting for
+            multi-site practices.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >React Native</span
+            >
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >Express</span
+            >
+            <span
+              class="surface-chip px-3 py-1 rounded-full border border-gray-300 dark:border-neutral-700 text-xs font-medium text-gray-900 dark:text-neutral-100"
+              >AWS</span
+            >
+          </div>
+          <div
+            class="mt-6 flex items-center justify-between border-t border-gray-200 dark:border-neutral-800 pt-4"
+          >
+            <span
+              class="text-xs uppercase tracking-[0.3em] text-gray-600 dark:text-neutral-400"
+              >Offline first</span
+            >
+            <span
+              class="inline-flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Cross-platform
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M7 17L17 7M7 7h10v10"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="py-10 border-t border-gray-200 dark:border-neutral-800"
+    >
+      <div class="mb-8 md:mb-10">
+        <span
+          class="inline-block px-3 py-1 bg-gray-100 dark:bg-black text-gray-700 dark:text-neutral-200 rounded-full text-sm font-medium font-mono mb-3"
+          >Background</span
+        >
+        <h2
+          class="text-3xl font-bold font-display text-gray-900 dark:text-white"
+        >
+          Professional Journey
+        </h2>
+      </div>
+
+      <div class="relative">
+        <div
+          class="absolute left-8 top-0 bottom-0 w-px bg-gray-200 dark:bg-neutral-800"
+        >
+        </div>
+
+        <div class="space-y-8 md:space-y-12">
+          <div class="flex flex-row items-start gap-6 relative pl-20">
+            <div
+              class="absolute left-7 top-1.5 w-3 h-3 bg-gray-900 dark:bg-white rounded-full border-4 border-white dark:border-neutral-900"
+            >
+            </div>
+            <div
+              class="absolute left-0 top-1 w-12 h-12 rounded-xl bg-gray-100 dark:bg-neutral-950 flex items-center justify-center"
+            >
+              <span
+                class="font-bold font-mono text-gray-700 dark:text-neutral-200"
+                >2023</span
+              >
+            </div>
+            <div
+              class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-5 shadow-[0_12px_35px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_45px_rgba(0,0,0,0.4)] w-full"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
+              >
+                <h3
+                  class="text-xl font-bold font-display text-gray-900 dark:text-white"
+                >
+                  Independent Product Engineer
+                </h3>
+                <span
+                  class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400"
+                  >2023 — Present</span
+                >
+              </div>
+              <ul class="space-y-2 text-gray-700 dark:text-neutral-200 text-sm">
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1">•</span>
+                  <span
+                    >Building full-stack applications for startups across
+                    fintech, AI, and healthcare</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1">•</span>
+                  <span
+                    >Delivered 15+ projects with focus on scalable architecture</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1">•</span>
+                  <span
+                    >Leading technical implementation from concept to production</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex flex-row items-start gap-6 relative pl-20">
+            <div
+              class="absolute left-7 top-1.5 w-3 h-3 bg-gray-900 dark:bg-white rounded-full border-4 border-white dark:border-neutral-900"
+            >
+            </div>
+            <div
+              class="absolute left-0 top-1 w-12 h-12 rounded-xl bg-gray-100 dark:bg-neutral-950 flex items-center justify-center"
+            >
+              <span
+                class="font-bold font-mono text-gray-700 dark:text-neutral-200"
+                >2022</span
+              >
+            </div>
+            <div
+              class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-5 shadow-[0_12px_35px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_45px_rgba(0,0,0,0.4)] w-full"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3"
+              >
+                <h3
+                  class="text-xl font-bold font-display text-gray-900 dark:text-white"
+                >
+                  Software Developer, GeekSynergy
+                </h3>
+                <span
+                  class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400"
+                  >2022 — 2023</span
+                >
+              </div>
+              <ul class="space-y-2 text-gray-700 dark:text-neutral-200 text-sm">
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1">•</span>
+                  <span
+                    >Maintained enterprise SaaS platforms with 99.9% uptime</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1">•</span>
+                  <span
+                    >Reduced API latency by 40% through performance optimization</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1">•</span>
+                  <span>Implemented RBAC for multi-tenant systems</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-14">
+        <div class="mb-8">
+          <span
+            class="inline-block px-3 py-1 bg-gray-100 dark:bg-black text-gray-700 dark:text-neutral-200 rounded-full text-sm font-medium font-mono mb-3"
+            >Technical Skills</span
+          >
+          <h2
+            class="text-3xl font-bold font-display text-gray-900 dark:text-white"
+          >
+            My Expertise
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-6 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)]"
+          >
+            <h3
+              class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
+            >
+              <svg
+                class="w-5 h-5 mr-2 text-gray-900 dark:text-neutral-100"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Frontend
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >React.js</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Next.js</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >TypeScript</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >React Native</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Flutter</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Tailwind CSS</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-6 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)]"
+          >
+            <h3
+              class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
+            >
+              <svg
+                class="w-5 h-5 mr-2 text-gray-900 dark:text-neutral-100"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8 1.79 8 4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 10v-4m0 4c0 2.21-3.582 4-8 4s-8-1.79-8-4m0-10V7m0 10c0-2.21 3.582-4 8-4s8 1.79 8 4m0-10V7m0 10c0 2.21-3.582 4-8 4s-8-1.79-8-4m0-10V7"
+                ></path>
+              </svg>
+              Backend
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Node.js</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Express</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Python</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >PostgreSQL</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >MongoDB</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >GraphQL</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="surface-card border border-gray-200 dark:border-neutral-800 rounded-xl p-6 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)]"
+          >
+            <h3
+              class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
+            >
+              <svg
+                class="w-5 h-5 mr-2 text-gray-900 dark:text-neutral-100"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              DevOps &amp; Tools
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >AWS</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Docker</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >CI/CD</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Git</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Jest</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Cypress</span
+              >
+              <span
+                class="surface-chip px-3 py-1 rounded-lg text-gray-800 dark:text-neutral-100 text-sm font-medium font-mono"
+                >Kubernetes</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="py-12 border-t border-gray-200 dark:border-neutral-800"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-10">
+          <span
+            class="inline-block px-3 py-1 bg-gray-100 dark:bg-black text-gray-700 dark:text-neutral-200 rounded-full text-sm font-medium font-mono mb-3"
+            >Get in touch</span
+          >
+          <h2
+            class="text-3xl font-bold font-display text-gray-900 dark:text-white"
+          >
+            Let's build something meaningful together
+          </h2>
+          <p class="text-gray-700 dark:text-neutral-200 mt-3 max-w-2xl">
+            Available for freelance projects and full-time opportunities. Expect
+            a response within 24 hours.
           </p>
         </div>
 
-        <div class="contact-links">
-          <a href="mailto:ab.amiri484@gmail.com" class="contact-link">
-            <div class="contact-link__icon">
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+          <a
+            href="mailto:ab.amiri484@gmail.com"
+            class="surface-card group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-neutral-800 p-5 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)] hover:-translate-y-1 hover:border-gray-500 dark:hover:border-neutral-600 transition-all duration-300"
+          >
+            <div>
+              <div
+                class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400 mb-2"
+              >
+                Email
+              </div>
+              <div class="text-gray-900 dark:text-white font-medium">
+                ab.amiri484@gmail.com
+              </div>
+            </div>
+            <div
+              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200/80 dark:bg-neutral-800 transition-transform group-hover:scale-110"
+            >
               <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                class="w-5 h-5 text-gray-800 dark:text-neutral-200"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                 ></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
             </div>
-            <div class="contact-link__text">
-              <span class="contact-link__label">Email</span>
-              <span class="contact-link__value">ab.amiri484@gmail.com</span>
-            </div>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M12 4L16 8M16 8L12 12M16 8L4 8"
-                stroke="currentColor"
-                stroke-width="2"></path>
-            </svg>
           </a>
 
           <a
             href="https://github.com/karim-coder"
             target="_blank"
             rel="noopener noreferrer"
-            class="contact-link"
+            class="surface-card group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-neutral-800 p-5 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)] hover:-translate-y-1 hover:border-gray-500 dark:hover:border-neutral-600 transition-all duration-300"
           >
-            <div class="contact-link__icon">
+            <div>
+              <div
+                class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400 mb-2"
+              >
+                GitHub
+              </div>
+              <div class="text-gray-900 dark:text-white font-medium">
+                github.com/karim-coder
+              </div>
+            </div>
+            <div
+              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200/80 dark:bg-neutral-800 transition-transform group-hover:scale-110"
+            >
               <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                class="w-5 h-5 text-gray-800 dark:text-neutral-200"
                 fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.306.76-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.313.469-2.383 1.235-3.222-.124-.304-.536-1.524.116-3.178 0 0 1.008-.322 3.301 1.229.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.551 3.297-1.229 3.297-1.229.653 1.654.242 2.874.118 3.178.77.839 1.235 1.909 1.235 3.222 0 4.61-2.807 5.625-5.479 5.922.43.372.824 1.102.824 2.222 0 1.605-.015 2.896-.015 3.286 0 .316.215.688.824.574C20.567 21.804 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-                ></path>
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd"></path>
               </svg>
             </div>
-            <div class="contact-link__text">
-              <span class="contact-link__label">GitHub</span>
-              <span class="contact-link__value">github.com/karim-coder</span>
+          </a>
+
+          <a
+            href="https://twitter.com/karim_coder"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="surface-card group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-neutral-800 p-5 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)] hover:-translate-y-1 hover:border-gray-500 dark:hover:border-neutral-600 transition-all duration-300"
+          >
+            <div>
+              <div
+                class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400 mb-2"
+              >
+                X (Twitter)
+              </div>
+              <div class="text-gray-900 dark:text-white font-medium">
+                @karim_coder
+              </div>
             </div>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M12 4L16 8M16 8L12 12M16 8L4 8"
-                stroke="currentColor"
-                stroke-width="2"></path>
-            </svg>
+            <div
+              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200/80 dark:bg-neutral-800 transition-transform group-hover:scale-110"
+            >
+              <svg
+                class="w-5 h-5 text-gray-800 dark:text-neutral-200"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.5 3h3.34l3.96 5.52L15.81 3h3.13l-5.62 7.34L19.5 21h-3.34l-4.34-6.07L7.9 21H4.77l5.92-8.02L4.5 3z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
           </a>
 
           <a
             href="https://linkedin.com/in/karim-amiri-34b915176"
             target="_blank"
             rel="noopener noreferrer"
-            class="contact-link"
+            class="surface-card group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-neutral-800 p-5 shadow-[0_12px_32px_rgba(15,15,15,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.38)] hover:-translate-y-1 hover:border-gray-500 dark:hover:border-neutral-600 transition-all duration-300"
           >
-            <div class="contact-link__icon">
+            <div>
+              <div
+                class="text-sm font-medium font-mono text-gray-600 dark:text-neutral-400 mb-2"
+              >
+                LinkedIn
+              </div>
+              <div class="text-gray-900 dark:text-white font-medium">
+                linkedin.com/in/karim-amiri
+              </div>
+            </div>
+            <div
+              class="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200/80 dark:bg-neutral-800 transition-transform group-hover:scale-110"
+            >
               <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                class="w-5 h-5 text-gray-800 dark:text-neutral-200"
                 fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                 ></path>
               </svg>
             </div>
-            <div class="contact-link__text">
-              <span class="contact-link__label">LinkedIn</span>
-              <span class="contact-link__value"
-                >linkedin.com/in/karim-amiri</span
-              >
-            </div>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M12 4L16 8M16 8L12 12M16 8L4 8"
-                stroke="currentColor"
-                stroke-width="2"></path>
-            </svg>
           </a>
         </div>
       </div>
@@ -358,913 +844,116 @@ import "../styles/global.css";
   </main>
 
   <script>
-    const html = document.documentElement;
-    const toggle = document.getElementById("theme-toggle");
+    // Theme toggle functionality
+    const htmlEl = document.documentElement;
+    const themeToggleBtn = document.getElementById(
+      "theme-toggle"
+    ) as HTMLButtonElement | null;
+    const themeIconLight = document.getElementById(
+      "theme-icon-light"
+    ) as HTMLElement | null;
+    const themeIconDark = document.getElementById(
+      "theme-icon-dark"
+    ) as HTMLElement | null;
 
-    const applyTheme = (mode) => {
-      html.dataset.theme = mode;
-      localStorage.setItem("theme", mode);
-      // Update SVG icons to match theme
-      document.querySelectorAll("svg").forEach((svg) => {
-        if (mode === "dark") {
-          svg.setAttribute("stroke", "#fafafa");
-        } else {
-          svg.setAttribute("stroke", "#0a0a0a");
-        }
-      });
-    };
+    // Get theme from localStorage or system preference
+    const savedTheme = localStorage.getItem("theme");
+    const systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
 
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "light" || storedTheme === "dark") {
-      applyTheme(storedTheme);
+    // Set initial theme
+    if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+      htmlEl.classList.add("dark");
+      updateThemeIcons(true);
     } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      applyTheme(prefersDark ? "dark" : "light");
+      htmlEl.classList.remove("dark");
+      updateThemeIcons(false);
     }
 
-    toggle?.addEventListener("click", () => {
-      const currentTheme = html.dataset.theme;
-      const nextTheme = currentTheme === "dark" ? "light" : "dark";
-      applyTheme(nextTheme);
+    // Toggle theme on button click
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener("click", () => {
+        const isDarkMode = htmlEl.classList.toggle("dark");
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+        updateThemeIcons(isDarkMode);
+      });
+    }
+
+    // Update icons based on current theme
+    function updateThemeIcons(isDarkMode: boolean) {
+      if (themeIconLight && themeIconDark) {
+        if (isDarkMode) {
+          themeIconLight.classList.add("hidden");
+          themeIconDark.classList.remove("hidden");
+        } else {
+          themeIconLight.classList.remove("hidden");
+          themeIconDark.classList.add("hidden");
+        }
+      }
+    }
+
+    // Listen for system theme changes
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        if (!localStorage.getItem("theme")) {
+          const isDarkMode = e.matches;
+          htmlEl.classList.toggle("dark", isDarkMode);
+          updateThemeIcons(isDarkMode);
+        }
+      });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener(
+        "click",
+        function (this: HTMLAnchorElement, e: Event) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          if (!targetId || targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId) as HTMLElement;
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 72,
+              behavior: "smooth",
+            });
+          }
+        }
+      );
     });
   </script>
 
   <style>
-    :global(:root) {
-      --bg: #fafafa;
-      --surface: #ffffff;
-      --text: #0a0a0a;
-      --text-secondary: #4b5563;
-      --border: #e5e7eb;
-      --accent: #1f2937;
-      --accent-secondary: #f3f4f6;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap");
 
-    :global(html[data-theme="dark"]) {
-      --bg: #0a0a0a;
-      --surface: #111827;
-      --text: #fafafa;
-      --text-secondary: #9ca3af;
-      --border: #374151;
-      --accent: #fafafa;
-      --accent-secondary: #1f2937;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    :global(html) {
-      background: var(--bg);
-      color-scheme: light;
-      scroll-behavior: smooth;
-    }
-
-    :global(html[data-theme="dark"]) {
-      color-scheme: dark;
-    }
-
-    :global(body) {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family:
-        "Inter",
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
+    :root {
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      line-height: 1.6;
-      transition: var(--transition);
-      -webkit-font-smoothing: antialiased;
+      --font-display: "Manrope", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
     }
 
-    @supports (font-variation-settings: normal) {
-      :global(body) {
-        font-family:
-          "Inter var",
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
+    .font-sans {
+      font-family: var(--font-sans);
+    }
+    .font-display {
+      font-family: var(--font-display);
+    }
+    .font-mono {
+      font-family: var(--font-mono);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
       }
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 2rem 8rem;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .brand {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: opacity 0.2s;
-    }
-
-    .brand:hover {
-      opacity: 0.7;
-    }
-
-    .site-nav {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .site-nav a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      transition: var(--transition);
-      position: relative;
-      padding: 0.5rem 0;
-    }
-
-    .site-nav a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--text);
-      transition: var(--transition);
-    }
-
-    .site-nav a:hover,
-    .site-nav a:focus {
-      color: var(--text);
-    }
-
-    .site-nav a:hover::after,
-    .site-nav a:focus::after {
-      width: 100%;
-    }
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      color: var(--text);
-    }
-
-    .theme-toggle:hover {
-      background: var(--accent-secondary);
-    }
-
-    .theme-toggle__indicator {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 2px solid var(--text);
-      background: transparent;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .theme-toggle__indicator::before {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--text);
-      transform: scale(0);
-      transition: var(--transition);
-    }
-
-    html[data-theme="dark"] .theme-toggle__indicator::before {
-      transform: scale(1);
-    }
-
-    /* Hero Section */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 4rem;
-      padding: 5rem 0 4rem;
-      position: relative;
-    }
-
-    .hero__content {
-      max-width: 650px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero__badge {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      background: var(--accent-secondary);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.5rem;
-      transition: var(--transition);
-    }
-
-    .hero__title {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin: 0 0 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero__description {
-      font-size: 1.125rem;
-      color: var(--text-secondary);
-      margin: 0 0 2.5rem;
-      line-height: 1.7;
-      font-weight: 400;
-    }
-
-    .hero__cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-
-    .hero__graphic {
-      position: relative;
-      height: 280px;
-      display: none;
-    }
-
-    .graphic-element {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 24px;
-      background: linear-gradient(
-        135deg,
-        var(--accent-secondary) 0%,
-        transparent 100%
-      );
-      opacity: 0.4;
-      transform: rotate(2deg);
-      z-index: 1;
-    }
-
-    .btn {
-      padding: 0.85rem 1.75rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: 10px;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      cursor: pointer;
-      border: none;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      opacity: 0;
-      transition: var(--transition);
-      z-index: 1;
-    }
-
-    .btn:hover::before {
-      opacity: 1;
-    }
-
-    .btn-icon {
-      width: 18px;
-      height: 18px;
-    }
-
-    .btn--primary {
-      background: var(--accent);
-      color: var(--bg);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .btn--primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .btn--primary:active {
-      transform: translateY(0);
-    }
-
-    .btn--secondary {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: transparent;
-      backdrop-filter: blur(5px);
-    }
-
-    .btn--secondary:hover {
-      border-color: var(--accent);
-      background: var(--accent-secondary);
-      transform: translateY(-2px);
-    }
-
-    /* Section Headers */
-    .section-header {
-      margin-bottom: 3rem;
-      position: relative;
-      padding-bottom: 1.5rem;
-    }
-
-    .section-header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 3px;
-    }
-
-    .section-header--small {
-      margin-bottom: 2.5rem;
-    }
-
-    .section-header--small::after {
-      width: 40px;
-    }
-
-    .section-label {
-      display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-secondary);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -0.02em;
-    }
-
-    /* Work Section */
-    .work {
-      margin-bottom: 7rem;
-    }
-
-    .project-grid {
-      display: grid;
-      gap: 2.5rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: var(--transition);
-      box-shadow: var(--shadow);
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr;
-      height: 100%;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--text);
-    }
-
-    .project-card__visual {
-      height: 220px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .visual-pattern {
-      width: 100%;
-      height: 100%;
-      opacity: 0.15;
-    }
-
-    .visual-pattern--1 {
-      background: repeating-linear-gradient(
-        25deg,
-        var(--accent),
-        var(--accent) 15px,
-        transparent 15px,
-        transparent 30px
-      );
-    }
-
-    .visual-pattern--2 {
-      background: radial-gradient(
-        circle at 10% 20%,
-        var(--accent) 0%,
-        transparent 25%
-      );
-    }
-
-    .visual-pattern--3 {
-      background: linear-gradient(45deg, var(--accent) 25%, transparent 25%),
-        linear-gradient(-45deg, var(--accent) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--accent) 75%),
-        linear-gradient(-45deg, transparent 75%, var(--accent) 75%);
-      background-size: 20px 20px;
-    }
-
-    .project-card__content {
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .project-card__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1rem;
-    }
-
-    .project-card__header h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -0.01em;
-    }
-
-    .project-card__year {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-      background: var(--accent-secondary);
-      padding: 0.25rem 0.75rem;
-      border-radius: 10px;
-    }
-
-    .project-card__description {
-      margin: 0 0 1.5rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      flex-grow: 1;
-    }
-
-    .project-card__stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin-top: auto;
-    }
-
-    .project-card__stack span {
-      font-size: 0.8rem;
-      padding: 0.45rem 0.9rem;
-      background: var(--accent-secondary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .project-card__label {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      padding: 0.35rem 0.85rem;
-      background: var(--accent);
-      color: var(--bg);
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      z-index: 10;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .project-card--featured .project-card__visual {
-      height: 280px;
-    }
-
-    /* About Section */
-    .about {
-      margin-bottom: 7rem;
-    }
-
-    /* Timeline */
-    .timeline {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto 4rem;
-      padding-left: 30px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 7px;
-      width: 2px;
-      background: var(--border);
-    }
-
-    html[data-theme="dark"] .timeline::before {
-      background: var(--accent-secondary);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-    }
-
-    .timeline-item:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .timeline-item:last-child::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: -23px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: 3px solid var(--surface);
-    }
-
-    .timeline-marker {
-      position: absolute;
-      left: -30px;
-      top: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 2px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-    }
-
-    .timeline-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .timeline-content {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.75rem;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .timeline-content:hover {
-      transform: translateX(5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .timeline-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    .timeline-period {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-      background: var(--accent-secondary);
-      padding: 0.25rem 0.8rem;
-      border-radius: 6px;
-      align-self: center;
-    }
-
-    .timeline-details {
-      margin: 0;
-      padding-left: 1.25rem;
-      color: var(--text-secondary);
-    }
-
-    .timeline-details li {
-      margin-bottom: 0.6rem;
-      position: relative;
-      line-height: 1.6;
-    }
-
-    .timeline-details li::before {
-      content: "•";
-      position: absolute;
-      left: -1.2rem;
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* Skills */
-    .skills-section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .skill-category {
-      margin-bottom: 1.5rem;
-    }
-
-    .skill-category-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .skill-category-title::after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-      margin-left: 0.5rem;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .skill-tag {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.9rem;
-      background: var(--accent-secondary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-weight: 500;
-      transition: var(--transition);
-    }
-
-    .skill-tag:hover {
-      transform: translateY(-2px);
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    /* Contact Section */
-    .contact {
-      margin-bottom: 4rem;
-    }
-
-    .contact-card {
-      padding: 3rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .contact-card__header {
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-    }
-
-    .contact-card__header h2 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin: 0.75rem 0 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .contact-card__header p {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .contact-links {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .contact-link {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 1.25rem 1.5rem;
-      border-radius: 16px;
-      transition: var(--transition);
-      background: var(--accent-secondary);
-      border: 1px solid transparent;
-    }
-
-    .contact-link:hover,
-    .contact-link:focus {
-      transform: translateX(4px);
-      border-color: var(--border);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-link__icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .contact-link__text {
-      min-width: 0;
-    }
-
-    .contact-link__label {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      display: block;
-      margin-bottom: 0.15rem;
-    }
-
-    .contact-link__value {
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--text);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .contact-link svg:last-child {
-      opacity: 0.7;
-      transform: translateX(0);
-      transition: var(--transition);
-    }
-
-    .contact-link:hover svg:last-child,
-    .contact-link:focus svg:last-child {
-      opacity: 1;
-      transform: translateX(4px);
-    }
-
-    /* Responsive Design */
-    @media (min-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-      }
-
-      .hero__graphic {
-        display: block;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        padding: 0 1.5rem 6rem;
-      }
-
-      .site-header {
-        padding: 1.25rem 0;
-      }
-
-      .site-nav {
-        gap: 1.25rem;
-      }
-
-      .hero {
-        padding: 4rem 0 3rem;
-      }
-
-      .hero__title {
-        font-size: 2.25rem;
-      }
-
-      .section-title {
-        font-size: 1.875rem;
-      }
-
-      .project-card__header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
-
-      .timeline {
-        padding-left: 0;
-      }
-
-      .timeline::before {
-        display: none;
-      }
-
-      .timeline-marker {
-        display: none;
-      }
-
-      .contact-card {
-        padding: 2rem;
-      }
-
-      .contact-link {
-        grid-template-columns: 1fr auto;
-        gap: 1rem;
-      }
-
-      .contact-link__icon {
-        display: none;
-      }
-
-      .btn {
-        flex: 1;
-        justify-content: center;
-      }
-
-      .btn--secondary {
-        background: var(--accent-secondary);
-      }
+    /* Ensure dark mode works properly */
+    html.dark {
+      color-scheme: dark;
     }
   </style>
 </Layout>
