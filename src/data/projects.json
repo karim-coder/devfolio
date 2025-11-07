@@ -1,0 +1,29 @@
+[
+  {
+    "id": "crypto-flow",
+    "title": "CryptoFlow",
+    "category": "Fintech",
+    "year": 2024,
+    "description": "Real-time trading platform featuring WebSocket infrastructure, risk analytics, and compliance workflows for regulated markets handling 10K+ concurrent connections.",
+    "tags": ["React", "Node.js", "PostgreSQL", "WebSocket"],
+    "href": "#"
+  },
+  {
+    "id": "mind-reader",
+    "title": "MindReader",
+    "category": "Learning",
+    "year": 2024,
+    "description": "AI-guided learning experience with contextual prompts, progress analytics, and content authoring workflows tailored to enterprise knowledge bases.",
+    "tags": ["Next.js", "Python", "OpenAI"],
+    "href": "#"
+  },
+  {
+    "id": "health-sync",
+    "title": "HealthSync",
+    "category": "Healthcare",
+    "year": 2023,
+    "description": "HIPAA-compliant telehealth platform with synchronized clinician and patient apps, offline-first data sync, and automated reporting for multi-site practices.",
+    "tags": ["React Native", "Express", "AWS"],
+    "href": "#"
+  }
+]

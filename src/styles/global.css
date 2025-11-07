@@ -22,6 +22,27 @@
   .surface-card-contact {
     @apply rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900/85 p-5 transition-all duration-300 hover:border-gray-500 dark:hover:border-gray-500;
   }
+
+  .cheep {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-medium font-mono bg-gray-100 border border-gray-200 text-gray-700;
+  }
+
+  /* Large variant (rounded-lg + monospace small text) used in skill lists */
+  .cheep-lg {
+    @apply px-3 py-1 rounded-lg text-sm font-medium font-mono bg-gray-100 text-gray-700;
+  }
+
+  html.dark .cheep {
+    /* Dark-mode appearance: keep chips readable but subtle */
+    background-color: rgba(255, 255, 255, 0.06); /* subtle light tint */
+    border-color: rgba(255, 255, 255, 0.08);
+    color: rgb(235, 235, 235);
+  }
+
+  html.dark .cheep-lg {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: rgb(235, 235, 235);
+  }
 }
 
 /* ===== Color scheme ===== */
@@ -335,32 +356,11 @@ html.dark .surface-card-contact {
   border-color: rgba(255, 255, 255, 0.14);
 }
 
-@layer components {
-  /* Reusable pill/chip component used across the site.
-     Use the `cheep` class on <span> or <a> elements to get consistent
-     background, border and text colors in both light and dark modes. */
-  .cheep {
-    /* Match the section label badges: slightly larger text, consistent padding, and light bg in light mode */
-    @apply inline-block px-3 py-1 rounded-full text-sm font-medium font-mono bg-gray-100 border border-gray-200 text-gray-700;
-  }
-
-  /* Large variant (rounded-lg + monospace small text) used in skill lists */
-  .cheep-lg {
-    @apply px-3 py-1 rounded-lg text-sm font-medium font-mono bg-gray-100 text-gray-700;
-  }
-
-  /* Dark mode overrides: use a slightly translucent light tint so chips
-     appear lighter in dark theme (non-bluish). Use explicit CSS here to
-     avoid relying on @apply for these runtime overrides. */
-  html.dark .cheep {
-    /* Dark-mode appearance: keep chips readable but subtle */
-    background-color: rgba(255, 255, 255, 0.06); /* subtle light tint */
-    border-color: rgba(255, 255, 255, 0.08);
-    color: rgb(235, 235, 235);
-  }
-
-  html.dark .cheep-lg {
-    background-color: rgba(255, 255, 255, 0.06);
-    color: rgb(235, 235, 235);
-  }
+.project-card:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(3px);
+}
+.thumbnail {
+  width: 130px;
+  height: 130px;
 }
