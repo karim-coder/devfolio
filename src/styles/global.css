@@ -53,10 +53,18 @@
     sans-serif;
   --font-display: "Manrope", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  /* Custom color variables */
+  --accent: #333333; /* neutral dark gray */
+  --bg: #ffffff; /* white */
+  --border: #c6c6c6; /* gray-200 */
 }
 
 html.dark {
   color-scheme: dark;
+  /* Dark mode color variables */
+  --accent: #ffffff; /* neutral light gray */
+  --bg: #000000; /* gray-800 */
+  --border: #374151; /* gray-700 */
 }
 
 /* Utility font classes (used in templates) */
@@ -397,35 +405,45 @@ html.dark .section-vertical-divider {
 }
 
 /* Timeline dot used in experience timeline items. Light mode uses a soft
-   neutral background (very subtle) while dark mode keeps a bright dot to
-   stand out on the dark surface. Border colors follow existing tokens. */
-.timeline-dot {
-  /* hollow circle by default — lighter gray border for gentler contrast */
-  background-color: transparent;
-  border-color: rgb(152, 158, 165); /* light-medium gray */
-  transition: background-color 180ms ease, transform 180ms ease,
-    box-shadow 180ms ease, border-color 180ms ease;
+/* Timeline dot - double circle design */
+.timeline-dot-outer {
+  border-color: rgb(156, 163, 175); /* gray-400 */
+  transition: border-color 180ms ease, transform 180ms ease,
+    box-shadow 180ms ease;
   box-shadow: none;
 }
 
-html.dark .timeline-dot {
-  /* hollow circle in dark mode uses a softer off-white (not pure white) */
-  background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.72); /* softer than full white */
+html.dark .timeline-dot-outer {
+  border-color: rgb(107, 114, 128); /* gray-500 */
 }
 
-/* Current timeline item — balanced filled circle */
-.timeline-dot--current {
-  background-color: rgb(70, 73, 78); /* soft dark gray, not pure black */
-  border-color: rgba(0, 0, 0, 0.12);
-  transform: scale(1.04);
-  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.06);
+.timeline-dot-inner {
+  background-color: rgb(229, 231, 235); /* gray-200 */
+  margin: 1px; /* center the inner circle */
 }
 
-html.dark .timeline-dot--current {
-  background-color: rgb(238, 238, 238); /* soft off-white */
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+html.dark .timeline-dot-inner {
+  background-color: rgb(55, 65, 81); /* gray-700 */
+}
+
+/* Current timeline item - enhanced double circle */
+.timeline-dot-outer--current {
+  border-color: rgb(156, 163, 175); /* gray-400 - less dark */
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .timeline-dot-outer--current {
+  border-color: rgb(156, 163, 175); /* gray-400 - less white */
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.timeline-dot-inner--current {
+  background-color: rgb(31, 41, 55); /* gray-800 */
+}
+
+html.dark .timeline-dot-inner--current {
+  background-color: rgb(243, 244, 246); /* gray-100 */
 }
 
 .project-card:hover .arrow-icon {
@@ -435,4 +453,22 @@ html.dark .timeline-dot--current {
 .thumbnail {
   width: 130px;
   height: 130px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--border);
+  z-index: 1;
+  left: 0.9rem;
+}
+
+.timeline-marker--current {
+  background: var(--accent);
 }

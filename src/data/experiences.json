@@ -19,5 +19,15 @@
       "Reduced API latency by 40% through performance optimization",
       "Implemented RBAC for multi-tenant systems"
     ]
+  },
+  {
+    "id": "frontend-developer-startup",
+    "title": "Frontend Developer, Tech Startup",
+    "period": "2021 — 2022",
+    "bullets": [
+      "Developed responsive web applications using React and TypeScript",
+      "Collaborated with design team to implement pixel-perfect UIs",
+      "Optimized frontend performance, improving load times by 30%"
+    ]
   }
 ]
