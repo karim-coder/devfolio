@@ -1,0 +1,30 @@
+[
+  {
+    "type": "email",
+    "href": "mailto:ab.amiri484@gmail.com",
+    "label": "Email",
+    "display": "ab.amiri484@gmail.com",
+    "external": false
+  },
+  {
+    "type": "github",
+    "href": "https://github.com/karim-coder",
+    "label": "GitHub",
+    "display": "github.com/karim-coder",
+    "external": true
+  },
+  {
+    "type": "linkedin",
+    "href": "https://linkedin.com/in/karim-amiri-34b915176",
+    "label": "LinkedIn",
+    "display": "linkedin.com/in/karim-amiri",
+    "external": true
+  },
+  {
+    "type": "twitter",
+    "href": "https://twitter.com/karim_coder",
+    "label": "Twitter",
+    "display": "@karim_coder",
+    "external": true
+  }
+]
