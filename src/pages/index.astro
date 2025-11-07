@@ -152,10 +152,7 @@ import socials from "../data/socials.json";
       </div>
     </section>
 
-    <section
-      id="work"
-      class="py-10 border-t border-gray-200 dark:border-gray-800"
-    >
+    <section id="work" class="py-10 section-divider">
       <div class="mb-8 md:mb-10">
         <span class="cheep mb-3">Portfolio</span>
         <h2
@@ -174,10 +171,7 @@ import socials from "../data/socials.json";
       </div>
     </section>
 
-    <section
-      id="about"
-      class="py-10 border-t border-gray-200 dark:border-gray-800"
-    >
+    <section id="about" class="py-10 section-divider">
       <div class="mb-8 md:mb-10">
         <span class="cheep mb-3">Background</span>
         <h2
@@ -189,7 +183,7 @@ import socials from "../data/socials.json";
 
       <div class="relative">
         <div
-          class="absolute left-5 top-0 bottom-0 w-px bg-gray-300 dark:bg-gray-700"
+          class="absolute left-5 top-0 bottom-0 w-px section-vertical-divider"
         >
         </div>
 
@@ -214,10 +208,7 @@ import socials from "../data/socials.json";
       </div>
     </section>
 
-    <section
-      id="contact"
-      class="py-12 border-t border-gray-200 dark:border-gray-800"
-    >
+    <section id="contact" class="py-12 section-divider">
       <div class="max-w-6xl mx-auto">
         <div class="mb-10">
           <span class="cheep mb-3">Get in touch</span>
@@ -320,36 +311,4 @@ import socials from "../data/socials.json";
       );
     });
   </script>
-
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap");
-
-    :root {
-      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      --font-display: "Manrope", sans-serif;
-      --font-mono: "JetBrains Mono", monospace;
-    }
-
-    .font-sans {
-      font-family: var(--font-sans);
-    }
-    .font-display {
-      font-family: var(--font-display);
-    }
-    .font-mono {
-      font-family: var(--font-mono);
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      html {
-        scroll-behavior: smooth;
-      }
-    }
-
-    /* Ensure dark mode works properly */
-    html.dark {
-      color-scheme: dark;
-    }
-  </style>
 </Layout>

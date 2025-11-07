@@ -48,10 +48,26 @@
 /* ===== Color scheme ===== */
 :root {
   color-scheme: light;
+  /* Font stack variables used across the site */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-display: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 html.dark {
   color-scheme: dark;
+}
+
+/* Utility font classes (used in templates) */
+.font-sans {
+  font-family: var(--font-sans);
+}
+.font-display {
+  font-family: var(--font-display);
+}
+.font-mono {
+  font-family: var(--font-mono);
 }
 
 /* ===== Smooth scrolling ===== */
@@ -354,6 +370,62 @@ html.dark .surface-card-sm {
 html.dark .surface-card-contact {
   background-color: rgba(17, 17, 17, 0.85);
   border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Section divider utility
+   Use this on page sections instead of repeating Tailwind utilities so we
+   control the light-mode border color (subtle) while keeping a stronger
+   contrast in dark mode. Applied as `class="... section-divider"`. */
+.section-divider {
+  border-top-width: 1px;
+  border-top-style: solid;
+  /* subtle, cool-toned border in light mode to avoid looking too dark */
+  border-top-color: rgba(17, 24, 39, 0.1);
+}
+
+html.dark .section-divider {
+  /* preserve the previously-used dark border */
+  border-top-color: rgb(52, 52, 52);
+}
+
+.section-vertical-divider {
+  background-color: rgba(17, 24, 39, 0.2);
+}
+
+html.dark .section-vertical-divider {
+  background-color: rgb(70, 70, 70);
+}
+
+/* Timeline dot used in experience timeline items. Light mode uses a soft
+   neutral background (very subtle) while dark mode keeps a bright dot to
+   stand out on the dark surface. Border colors follow existing tokens. */
+.timeline-dot {
+  /* hollow circle by default — lighter gray border for gentler contrast */
+  background-color: transparent;
+  border-color: rgb(152, 158, 165); /* light-medium gray */
+  transition: background-color 180ms ease, transform 180ms ease,
+    box-shadow 180ms ease, border-color 180ms ease;
+  box-shadow: none;
+}
+
+html.dark .timeline-dot {
+  /* hollow circle in dark mode uses a softer off-white (not pure white) */
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.72); /* softer than full white */
+}
+
+/* Current timeline item — balanced filled circle */
+.timeline-dot--current {
+  background-color: rgb(70, 73, 78); /* soft dark gray, not pure black */
+  border-color: rgba(0, 0, 0, 0.12);
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.06);
+}
+
+html.dark .timeline-dot--current {
+  background-color: rgb(238, 238, 238); /* soft off-white */
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .project-card:hover .arrow-icon {
