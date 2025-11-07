@@ -5,6 +5,8 @@ import ProjectCard from "../components/ProjectCard.astro";
 import projects from "../data/projects.json";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import experiences from "../data/experiences.json";
+import SkillCard from "../components/SkillCard.astro";
+import skills from "../data/skills.json";
 ---
 
 <Layout>
@@ -205,101 +207,7 @@ import experiences from "../data/experiences.json";
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-          <div class="surface-card-sm">
-            <h3
-              class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
-            >
-              <svg
-                class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                ></path>
-              </svg>
-              Frontend
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="cheep-lg">React.js</span>
-              <span class="cheep-lg">Next.js</span>
-              <span class="cheep-lg">TypeScript</span>
-              <span class="cheep-lg">React Native</span>
-              <span class="cheep-lg">Flutter</span>
-              <span class="cheep-lg">Tailwind CSS</span>
-            </div>
-          </div>
-
-          <div class="surface-card-sm">
-            <h3
-              class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
-            >
-              <svg
-                class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8 1.79 8 4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 10v-4m0 4c0 2.21-3.582 4-8 4s-8-1.79-8-4m0-10V7m0 10c0-2.21 3.582-4 8-4s8 1.79 8 4m0-10V7m0 10c0 2.21-3.582 4-8 4s-8-1.79-8-4m0-10V7"
-                ></path>
-              </svg>
-              Backend
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="cheep-lg">Node.js</span>
-              <span class="cheep-lg">Express</span>
-              <span class="cheep-lg">Python</span>
-              <span class="cheep-lg">PostgreSQL</span>
-              <span class="cheep-lg">MongoDB</span>
-              <span class="cheep-lg">GraphQL</span>
-            </div>
-          </div>
-
-          <div class="surface-card-sm">
-            <h3
-              class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
-            >
-              <svg
-                class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                ></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              DevOps &amp; Tools
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="cheep-lg">AWS</span>
-              <span class="cheep-lg">Docker</span>
-              <span class="cheep-lg">CI/CD</span>
-              <span class="cheep-lg">Git</span>
-              <span class="cheep-lg">Jest</span>
-              <span class="cheep-lg">Cypress</span>
-              <span class="cheep-lg">Kubernetes</span>
-            </div>
-          </div>
+          {skills.map((skill) => <SkillCard skill={skill} />)}
         </div>
       </div>
     </section>

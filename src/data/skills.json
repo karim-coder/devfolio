@@ -1,0 +1,27 @@
+[
+  {
+    "id": "frontend",
+    "title": "Frontend",
+    "icon": "frontend",
+    "tags": [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "React Native",
+      "Flutter",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "Backend",
+    "icon": "backend",
+    "tags": ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB", "GraphQL"]
+  },
+  {
+    "id": "devops",
+    "title": "DevOps & Tools",
+    "icon": "devops",
+    "tags": ["AWS", "Docker", "CI/CD", "Git", "Jest", "Cypress", "Kubernetes"]
+  }
+]
