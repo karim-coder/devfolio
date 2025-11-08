@@ -1,0 +1,140 @@
+---
+// Header component
+---
+
+<header
+  class="sticky top-0 z-50 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-3"
+>
+  <div class="flex justify-between items-center">
+    <a
+      href="#top"
+      class="text-2xl font-bold font-heading text-gray-900 dark:text-white tracking-tight hover:opacity-80 transition-opacity"
+      >KARIM</a
+    >
+    <nav class="flex items-center gap-8">
+      <a
+        href="#work"
+        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
+      >
+        Work
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="#about"
+        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
+      >
+        About
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <a
+        href="#contact"
+        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
+      >
+        Contact
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <button
+        id="theme-toggle"
+        class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        aria-label="Toggle theme"
+      >
+        <svg
+          id="theme-icon-light"
+          class="w-5 h-5 text-gray-900 dark:hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+        <svg
+          id="theme-icon-dark"
+          class="w-5 h-5 text-white hidden dark:block"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Theme toggle functionality
+  const htmlEl = document.documentElement;
+  const themeToggleBtn = document.getElementById(
+    "theme-toggle"
+  ) as HTMLButtonElement | null;
+  const themeIconLight = document.getElementById(
+    "theme-icon-light"
+  ) as HTMLElement | null;
+  const themeIconDark = document.getElementById(
+    "theme-icon-dark"
+  ) as HTMLElement | null;
+
+  // Get theme from localStorage or system preference
+  const savedTheme = localStorage.getItem("theme");
+  const systemPrefersDark = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
+  // Set initial theme
+  if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+    htmlEl.classList.add("dark");
+    updateThemeIcons(true);
+  } else {
+    htmlEl.classList.remove("dark");
+    updateThemeIcons(false);
+  }
+
+  // Toggle theme on button click
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const isDarkMode = htmlEl.classList.toggle("dark");
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+      updateThemeIcons(isDarkMode);
+    });
+  }
+
+  // Update icons based on current theme
+  function updateThemeIcons(isDarkMode: boolean) {
+    if (themeIconLight && themeIconDark) {
+      if (isDarkMode) {
+        themeIconLight.classList.add("hidden");
+        themeIconDark.classList.remove("hidden");
+      } else {
+        themeIconLight.classList.remove("hidden");
+        themeIconDark.classList.add("hidden");
+      }
+    }
+  }
+
+  // Listen for system theme changes
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        const isDarkMode = e.matches;
+        htmlEl.classList.toggle("dark", isDarkMode);
+        updateThemeIcons(isDarkMode);
+      }
+    });
+</script>
