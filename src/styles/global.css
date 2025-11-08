@@ -1,94 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
-/* Neutral surface component styles (replaces earlier Tailwind @apply mapping). */
-@layer components {
-  .surface-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 1.5rem;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-surface);
-    padding: 1.5rem;
-    transition: transform 300ms ease, box-shadow 300ms ease,
-      border-color 300ms ease, background-color 300ms ease;
-    will-change: transform;
-  }
-
-  @media (min-width: 768px) {
-    .surface-card {
-      padding: 2rem;
-    }
-  }
-
-  .surface-card:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0 32px 60px rgba(0, 0, 0, 0.08);
-    border-color: var(--color-border-strong);
-  }
-
-  /* compact variant used for smaller cards (timeline, skill boxes, etc.) */
-  .surface-card-sm {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 0.75rem;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-surface);
-    padding: 1.25rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    transition: background-color 200ms ease, border-color 200ms ease,
-      box-shadow 200ms ease;
-  }
-
-  .surface-card-sm:hover {
-    border-color: var(--color-border-strong);
-    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.06);
-  }
-
-  .surface-card-contact {
-    border-radius: 1rem;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-surface);
-    padding: 1.25rem;
-    transition: border-color 300ms ease, background-color 300ms ease,
-      transform 300ms ease;
-  }
-
-  .surface-card-contact:hover {
-    border-color: var(--color-border-strong);
-  }
-
-  .cheep {
-    display: inline-block;
-    /* slightly smaller than before: modestly increased padding for better spacing */
-    padding: 0.1875rem 0.625rem; /* ~3px 10px */
-    border-radius: 1rem;
-    font-size: 0.84375rem; /* ~13.5px - slightly larger for readability */
-    line-height: 1;
-    font-weight: 500;
-    font-family: var(--font-mono);
-    letter-spacing: 0.01em;
-    border: 1px solid var(--color-chip-border);
-    background-color: var(--color-chip-bg);
-    color: var(--color-text-tertiary);
-  }
-
-  /* Large variant (rounded-lg + monospace small text) used in skill lists */
-  .cheep-lg {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    font-family: var(--font-mono);
-    letter-spacing: 0.01em;
-    background-color: var(--color-chip-bg);
-    border: 1px solid var(--color-chip-border);
-    color: var(--color-text-tertiary);
-  }
-}
-
 /* ===== Color scheme ===== */
 :root {
   color-scheme: light;
@@ -136,6 +48,108 @@ html.dark {
   --accent: #f5f5f5;
   --bg: var(--color-bg);
   --border: var(--color-border);
+}
+
+/* Neutral surface component styles (replaces earlier Tailwind @apply mapping). */
+@layer components {
+  .surface-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    transition: transform 300ms ease, box-shadow 300ms ease,
+      border-color 300ms ease, background-color 300ms ease;
+    will-change: transform;
+  }
+
+  @media (min-width: 768px) {
+    .surface-card {
+      padding: 2rem;
+    }
+  }
+
+  .surface-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 32px 60px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-border-strong);
+  }
+
+  /* compact variant used for smaller cards (timeline, skill boxes, etc.) */
+  .surface-card-sm {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 1.25rem;
+    transition: transform 300ms ease, box-shadow 300ms ease,
+      border-color 300ms ease, background-color 300ms ease;
+    will-change: transform;
+  }
+
+  .surface-card-sm:hover {
+    transform: translateY(-0.2rem);
+    border-color: var(--color-border-strong);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  .surface-card-contact {
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 1.25rem;
+    transition: transform 300ms ease, box-shadow 300ms ease,
+      border-color 300ms ease, background-color 300ms ease;
+    will-change: transform;
+  }
+
+  .surface-card-contact:hover {
+    transform: translateY(-0.15rem);
+    border-color: var(--color-border-strong);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.05);
+  }
+
+  .cheep {
+    display: inline-block;
+    /* slightly smaller than before: modestly increased padding for better spacing */
+    padding: 0.1875rem 0.625rem; /* ~3px 10px */
+    border-radius: 1rem;
+    font-size: 0.84375rem; /* ~13.5px - slightly larger for readability */
+    line-height: 1;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.01em;
+    border: 1px solid var(--color-chip-border);
+    background-color: var(--color-chip-bg);
+    color: var(--color-text-tertiary);
+  }
+
+  /* Large variant (rounded-lg + monospace small text) used in skill lists */
+  .cheep-lg {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.01em;
+    background-color: var(--color-chip-bg);
+    border: 1px solid var(--color-chip-border);
+    color: var(--color-text-tertiary);
+  }
+
+  .github-btn {
+    background-color: var(--accent);
+    color: var(--color-surface);
+    transition: background-color 200ms ease, transform 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+  .github-btn:hover {
+    filter: brightness(0.92);
+  }
 }
 
 /* Utility font classes (used in templates) */
