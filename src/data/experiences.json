@@ -8,7 +8,8 @@
       "Building full-stack applications for startups across fintech, AI, and healthcare",
       "Delivered 15+ projects with focus on scalable architecture",
       "Leading technical implementation from concept to production"
-    ]
+    ],
+    "tags": ["Next.js", "Python", "OpenAI"]
   },
   {
     "id": "software-developer-geeksynergy",
@@ -18,7 +19,8 @@
       "Maintained enterprise SaaS platforms with 99.9% uptime",
       "Reduced API latency by 40% through performance optimization",
       "Implemented RBAC for multi-tenant systems"
-    ]
+    ],
+    "tags": ["Django", "React", "AWS"]
   },
   {
     "id": "frontend-developer-startup",
@@ -28,6 +30,7 @@
       "Developed responsive web applications using React and TypeScript",
       "Collaborated with design team to implement pixel-perfect UIs",
       "Optimized frontend performance, improving load times by 30%"
-    ]
+    ],
+    "tags": ["React", "TypeScript", "CSS"]
   }
 ]

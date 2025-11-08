@@ -6,6 +6,7 @@ interface Props {
     period?: string;
     bullets?: string[];
     current?: boolean;
+    tags?: string[];
   };
 }
 const { experience } = Astro.props as Props;
@@ -41,5 +42,20 @@ const { experience } = Astro.props as Props;
         ))
       }
     </ul>
+    <div role="list" aria-label="Tags" class="mt-2 flex flex-wrap gap-2">
+      {
+        experience.tags?.map((tag) => (
+          <span
+            role="listitem"
+            class="cheep"
+            tabindex="0"
+            title={tag}
+            aria-label={`Tag: ${tag}`}
+          >
+            {tag}
+          </span>
+        ))
+      }
+    </div>
   </div>
 </div>

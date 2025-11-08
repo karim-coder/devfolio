@@ -19,8 +19,8 @@
   --color-text-quaternary: #6b6b6b;
   --color-border: rgba(17, 17, 17, 0.08);
   --color-border-strong: rgba(17, 17, 17, 0.18);
-  --color-chip-bg: rgba(17, 17, 17, 0.02);
-  --color-chip-border: rgba(17, 17, 17, 0.12);
+  --color-chip-bg: rgba(17, 17, 17, 0.04);
+  --color-chip-border: rgba(17, 17, 17, 0.08);
   --color-header-bg: color-mix(in srgb, var(--color-surface) 92%, transparent);
   --color-header-border: rgba(17, 17, 17, 0.12);
   --color-backdrop-strong: rgba(17, 17, 17, 0.08);
@@ -42,7 +42,7 @@ html.dark {
   --color-border: rgba(255, 255, 255, 0.16);
   --color-border-strong: rgba(255, 255, 255, 0.24);
   --color-chip-bg: rgba(255, 255, 255, 0.08);
-  --color-chip-border: rgba(255, 255, 255, 0.14);
+  --color-chip-border: rgba(255, 255, 255, 0.08);
   --color-header-bg: color-mix(in srgb, var(--color-surface) 80%, transparent);
   --color-header-border: rgba(255, 255, 255, 0.18);
   --color-backdrop-strong: rgba(255, 255, 255, 0.1);
@@ -115,11 +115,13 @@ html.dark {
 
   .cheep {
     display: inline-block;
-    /* slightly smaller than before: modestly increased padding for better spacing */
-    padding: 0.1875rem 0.625rem; /* ~3px 10px */
-    border-radius: 1rem;
-    font-size: 0.84375rem; /* ~13.5px - slightly larger for readability */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    /* font-size: 0.875rem; */
     line-height: 1;
+    border: 1px solid transparent;
+
+    font-size: 0.84375rem;
     font-weight: 500;
     font-family: var(--font-mono);
     letter-spacing: 0.01em;
