@@ -4,7 +4,7 @@
 
 <header
   class="sticky top-0 z-50 backdrop-blur-xl py-4 px-6 md:px-8"
-  style="background-color: var(--color-header-bg); border-bottom: 1px solid var(--color-header-border); box-shadow: 0 1px 0 var(--color-backdrop-strong);"
+  style="background-color: var(--color-header-bg);"
 >
   <div class="max-w-7xl mx-auto flex justify-between items-center">
     <a
@@ -51,7 +51,7 @@
       >
         <svg
           id="theme-icon-light"
-          class="w-5 h-5 text-primary dark:hidden transition-transform duration-200"
+          class="w-5 h-5 text-primary transition-transform duration-200"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -65,7 +65,7 @@
         </svg>
         <svg
           id="theme-icon-dark"
-          class="w-5 h-5 text-primary hidden dark:block transition-transform duration-200"
+          class="w-5 h-5 text-primary transition-transform duration-200"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -83,6 +83,14 @@
 </header>
 
 <style>
+  header {
+    box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.15);
+  }
+
+  html.dark header {
+    box-shadow: 0 8px 12px -8px rgba(255, 255, 255, 0.25);
+  }
+
   #theme-toggle:hover {
     background-color: var(--color-chip-bg) !important;
   }
@@ -129,11 +137,11 @@
   function updateThemeIcons(isDarkMode: boolean) {
     if (themeIconLight && themeIconDark) {
       if (isDarkMode) {
-        themeIconLight.classList.add("hidden");
-        themeIconDark.classList.remove("hidden");
+        themeIconLight.style.display = "none";
+        themeIconDark.style.display = "block";
       } else {
-        themeIconLight.classList.remove("hidden");
-        themeIconDark.classList.add("hidden");
+        themeIconLight.style.display = "block";
+        themeIconDark.style.display = "none";
       }
     }
   }
