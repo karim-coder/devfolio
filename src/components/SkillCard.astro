@@ -4,12 +4,12 @@ const { skill } = Astro.props;
 
 <div class="surface-card-sm">
   <h3
-    class="text-lg font-bold font-display text-gray-900 dark:text-white mb-4 flex items-center"
+    class="text-lg font-bold font-display text-primary mb-4 flex items-center"
   >
     {
       skill.icon === "frontend" ? (
         <svg
-          class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
+          class="w-5 h-5 mr-2 text-primary"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -24,7 +24,7 @@ const { skill } = Astro.props;
         </svg>
       ) : skill.icon === "backend" ? (
         <svg
-          class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
+          class="w-5 h-5 mr-2 text-primary"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ const { skill } = Astro.props;
         </svg>
       ) : (
         <svg
-          class="w-5 h-5 mr-2 text-gray-900 dark:text-gray-100"
+          class="w-5 h-5 mr-2 text-primary"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

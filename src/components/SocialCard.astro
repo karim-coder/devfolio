@@ -11,12 +11,12 @@ const { social } = Astro.props;
   aria-label={social.ariaLabel || social.label}
 >
   <div
-    class="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 transition-colors"
+    class="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-surface-subtle transition-colors"
   >
     {
       social.type === "email" && (
         <svg
-          class="w-6 h-6 text-gray-900 dark:text-gray-200"
+          class="w-6 h-6 text-primary"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ const { social } = Astro.props;
     {
       social.type === "github" && (
         <svg
-          class="w-6 h-6 text-gray-900 dark:text-gray-200"
+          class="w-6 h-6 text-primary"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -52,7 +52,7 @@ const { social } = Astro.props;
     {
       social.type === "linkedin" && (
         <svg
-          class="w-6 h-6 text-gray-900 dark:text-gray-200"
+          class="w-6 h-6 text-primary"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -65,7 +65,7 @@ const { social } = Astro.props;
     {
       social.type === "twitter" && (
         <svg
-          class="w-6 h-6 text-gray-900 dark:text-gray-200"
+          class="w-6 h-6 text-primary"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -77,12 +77,10 @@ const { social } = Astro.props;
   </div>
 
   <div class="flex-1 min-w-0">
-    <div
-      class="text-sm font-medium font-mono text-gray-500 dark:text-gray-400 mb-1"
-    >
+    <div class="text-sm font-medium font-mono text-quaternary mb-1">
       {social.label}
     </div>
-    <div class="text-gray-900 dark:text-white font-medium truncate">
+    <div class="text-primary font-medium truncate">
       {social.display}
     </div>
   </div>

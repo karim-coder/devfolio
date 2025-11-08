@@ -23,12 +23,12 @@ const href = project.href ?? "#";
   aria-label={`View ${project.title} project details`}
 >
   <div
-    class="thumbnail flex-shrink-0 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center"
+    class="thumbnail flex-shrink-0 rounded-lg flex items-center justify-center"
     role="img"
     aria-label={`${project.title} thumbnail`}
   >
     <svg
-      class="w-8 h-8 text-gray-500 dark:text-gray-400"
+      class="w-8 h-8 text-quaternary"
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
@@ -55,18 +55,17 @@ const href = project.href ?? "#";
     <div class="flex items-start justify-between gap-3">
       <div class="flex-1 min-w-0">
         <div class="flex items-center gap-2">
-          <span
-            class="text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400"
+          <span class="text-xs uppercase tracking-[0.3em] text-quaternary"
             >{project.category} • {project.year}</span
           >
         </div>
 
         <div class="flex items-center gap-2 mt-1">
-          <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+          <h3 class="text-lg font-bold text-primary">
             {project.title}
           </h3>
           <svg
-            class="arrow-icon w-4 h-4 text-blue-600 dark:text-gray-600 opacity-0 transition-all flex-shrink-0"
+            class="arrow-icon w-4 h-4 text-tertiary opacity-0 transition-all flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -80,7 +79,7 @@ const href = project.href ?? "#";
           </svg>
         </div>
 
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+        <p class="mt-1 text-sm text-secondary line-clamp-2">
           {project.description}
         </p>
 

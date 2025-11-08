@@ -3,50 +3,55 @@
 ---
 
 <header
-  class="sticky top-0 z-50 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-3"
+  class="sticky top-0 z-50 backdrop-blur-xl py-4 px-6 md:px-8"
+  style="background-color: var(--color-header-bg); border-bottom: 1px solid var(--color-header-border); box-shadow: 0 1px 0 var(--color-backdrop-strong);"
 >
-  <div class="flex justify-between items-center">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
     <a
       href="#top"
-      class="text-2xl font-bold font-heading text-gray-900 dark:text-white tracking-tight hover:opacity-80 transition-opacity"
+      class="text-2xl md:text-3xl font-bold font-heading text-primary tracking-tight hover:opacity-70 transition-all duration-300"
       >KARIM</a
     >
-    <nav class="flex items-center gap-8">
+    <nav class="flex items-center gap-6 md:gap-10">
       <a
         href="#work"
-        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
+        class="font-medium text-sm md:text-base text-tertiary hover:text-primary relative group transition-colors duration-200"
       >
         Work
         <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+          class="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
+          style="background: linear-gradient(to right, var(--color-text-primary), var(--color-text-secondary));"
         ></span>
       </a>
       <a
         href="#about"
-        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
+        class="font-medium text-sm md:text-base text-tertiary hover:text-primary relative group transition-colors duration-200"
       >
         About
         <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+          class="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
+          style="background: linear-gradient(to right, var(--color-text-primary), var(--color-text-secondary));"
         ></span>
       </a>
       <a
         href="#contact"
-        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative group"
+        class="font-medium text-sm md:text-base text-tertiary hover:text-primary relative group transition-colors duration-200"
       >
         Contact
         <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all group-hover:w-full"
+          class="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
+          style="background: linear-gradient(to right, var(--color-text-primary), var(--color-text-secondary));"
         ></span>
       </a>
       <button
         id="theme-toggle"
-        class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        class="p-2.5 rounded-full transition-all duration-200 hover:scale-110 active:scale-95"
+        style="background-color: transparent;"
         aria-label="Toggle theme"
       >
         <svg
           id="theme-icon-light"
-          class="w-5 h-5 text-gray-900 dark:hidden"
+          class="w-5 h-5 text-primary dark:hidden transition-transform duration-200"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -60,7 +65,7 @@
         </svg>
         <svg
           id="theme-icon-dark"
-          class="w-5 h-5 text-white hidden dark:block"
+          class="w-5 h-5 text-primary hidden dark:block transition-transform duration-200"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -76,6 +81,12 @@
     </nav>
   </div>
 </header>
+
+<style>
+  #theme-toggle:hover {
+    background-color: var(--color-chip-bg) !important;
+  }
+</style>
 
 <script>
   // Theme toggle functionality

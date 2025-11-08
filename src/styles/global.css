@@ -176,174 +176,44 @@ html.dark {
   }
 }
 
-/* ===== Dark Mode Text Color Fixes ===== */
-html.dark .dark\:text-white,
-html.dark .text-white {
+/* ===== Semantic Utility Classes ===== */
+.text-primary {
   color: var(--color-text-primary);
 }
 
-html.dark .dark\:text-gray-300,
-html.dark .text-gray-300 {
+.text-secondary {
   color: var(--color-text-secondary);
 }
 
-html.dark .dark\:text-gray-400,
-html.dark .text-gray-400 {
+.text-tertiary {
   color: var(--color-text-tertiary);
 }
 
-html.dark .dark\:text-gray-500,
-html.dark .text-gray-500 {
+.text-quaternary {
   color: var(--color-text-quaternary);
 }
 
-html.dark p:not([class*="text-"]),
-html.dark span:not([class*="text-"]),
-html.dark li:not([class*="text-"]) {
-  color: var(--color-text-secondary);
-}
-
-/* ===== Dark Mode Background Fixes ===== */
-html.dark .dark\:bg-gray-800,
-html.dark .dark\:bg-gray-900,
-html.dark .bg-white,
-html.dark .bg-gray-900 {
+.bg-surface {
   background-color: var(--color-surface);
 }
 
-html.dark .bg-gray-100 {
+.bg-surface-subtle {
   background-color: var(--color-surface-subtle);
 }
 
-/* ===== Dark Mode Border Fixes ===== */
-html.dark .dark\:border-gray-700,
-html.dark .border-gray-200,
-html.dark .dark\:border-gray-800 {
+.bg-page {
+  background-color: var(--color-bg);
+}
+
+.border-default {
   border-color: var(--color-border);
 }
 
-/* ===== Light Mode Text Color Fixes ===== */
-html:not(.dark) .dark\:text-white,
-html:not(.dark) .text-gray-900 {
-  color: var(--color-text-primary);
+.border-strong {
+  border-color: var(--color-border-strong);
 }
 
-html:not(.dark) .text-gray-600,
-html:not(.dark) .dark\:text-gray-300 {
-  color: var(--color-text-tertiary);
-}
-
-html:not(.dark) p:not([class*="text-"]),
-html:not(.dark) span:not([class*="text-"]),
-html:not(.dark) li:not([class*="text-"]) {
-  color: var(--color-text-secondary);
-}
-
-html:not(.dark) .dark\:text-gray-400 {
-  color: var(--color-text-quaternary);
-}
-
-/* ===== Light Mode Background Fixes ===== */
-html:not(.dark) .bg-white {
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
-}
-
-html:not(.dark) .dark\:bg-gray-800 {
-  background-color: var(--color-surface-subtle);
-}
-
-html:not(.dark) .dark\:bg-gray-900 {
-  background-color: var(--color-surface-subtle);
-}
-
-header {
-  background-color: var(--color-header-bg) !important;
-  border-color: var(--color-header-border) !important;
-  box-shadow: 0 1px 0 var(--color-backdrop-strong);
-}
-
-header a,
-header .font-bold {
-  color: var(--color-text-primary) !important;
-}
-
-header .text-gray-600 {
-  color: var(--color-text-tertiary) !important;
-}
-
-header .text-gray-600:hover {
-  color: var(--color-text-primary) !important;
-}
-
-header svg {
-  color: var(--color-text-primary) !important;
-}
-
-header button {
-  background-color: transparent !important;
-}
-
-header button:hover {
-  background-color: var(--color-chip-bg) !important;
-}
-
-/* ===== Dark Mode Navbar ===== */
-html.dark header {
-  background-color: var(--color-header-bg) !important;
-  background-image: none !important;
-  border-color: var(--color-header-border) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-}
-
-html.dark header a,
-html.dark header .font-bold {
-  color: var(--color-text-primary) !important;
-}
-
-html.dark header .text-gray-600 {
-  color: var(--color-text-tertiary) !important;
-}
-
-html.dark header .text-gray-600:hover {
-  color: var(--color-text-primary) !important;
-}
-
-html.dark header svg {
-  color: var(--color-text-primary) !important;
-}
-
-html.dark header button:hover {
-  background-color: var(--color-chip-bg) !important;
-}
-
-.surface-card {
-  background-color: var(--color-surface);
-  border-color: var(--color-border);
-}
-.surface-card-sm {
-  background-color: var(--color-surface);
-  border-color: var(--color-border);
-}
-.surface-card-contact {
-  background-color: var(--color-surface);
-  border-color: var(--color-border);
-}
-
-/* Dark-mode overrides — slightly darker than before to reduce glare */
-html.dark .surface-card {
-  background-color: var(--color-surface-subtle);
-  border-color: var(--color-border);
-}
-html.dark .surface-card-sm {
-  background-color: var(--color-surface-subtle);
-  border-color: var(--color-border);
-}
-html.dark .surface-card-contact {
-  background-color: var(--color-surface-subtle);
-  border-color: var(--color-border);
-}
+/* Card components already use CSS variables, no overrides needed */
 
 .section-divider {
   border-top-width: 1px;
@@ -351,15 +221,7 @@ html.dark .surface-card-contact {
   border-top-color: var(--color-border);
 }
 
-html.dark .section-divider {
-  border-top-color: var(--color-border);
-}
-
 .section-vertical-divider {
-  background-color: var(--color-border-strong);
-}
-
-html.dark .section-vertical-divider {
   background-color: var(--color-border-strong);
 }
 
@@ -392,23 +254,6 @@ html.dark .section-vertical-divider {
   );
 }
 
-html.dark .timeline-dot-inner {
-  background-color: var(--color-surface-subtle);
-  background-color: color-mix(
-    in srgb,
-    var(--color-surface) 70%,
-    var(--color-bg) 30%
-  );
-}
-
-html.dark .timeline-dot-outer--current {
-  box-shadow: 0 4px 12px var(--color-backdrop-strong);
-}
-
-html.dark .timeline-dot-inner--current {
-  background-color: var(--color-text-primary);
-}
-
 .project-card:hover .arrow-icon {
   opacity: 1;
   transform: translateX(3px);
@@ -416,11 +261,7 @@ html.dark .timeline-dot-inner--current {
 .thumbnail {
   width: 130px;
   height: 130px;
-}
-
-html.dark .thumbnail {
-  background-color: var(--inner-bg);
-  /* border: 1px solid var(--color-border); */
+  background-color: var(--color-surface-subtle);
 }
 
 .timeline-marker {
