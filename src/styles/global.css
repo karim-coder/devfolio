@@ -11,7 +11,7 @@
   --font-mono: "JetBrains Mono", monospace;
   /* Neutral color system */
   --color-bg: #fdfdfd;
-  --color-surface: #ffffff;
+  --color-surface: rgba(251, 251, 251, 0.92);
   --color-surface-subtle: #f5f5f5;
   --color-text-primary: #111111;
   --color-text-secondary: #2d2d2d;
@@ -24,6 +24,7 @@
   --color-header-bg: color-mix(in srgb, var(--color-surface) 92%, transparent);
   --color-header-border: rgba(17, 17, 17, 0.12);
   --color-backdrop-strong: rgba(17, 17, 17, 0.08);
+  --color-timeline: rgba(17, 17, 17, 0.3);
   --accent: #111111;
   --inner-bg: #ffffff;
   --bg: var(--color-bg);
@@ -46,6 +47,7 @@ html.dark {
   --color-header-bg: color-mix(in srgb, var(--color-surface) 80%, transparent);
   --color-header-border: rgba(255, 255, 255, 0.18);
   --color-backdrop-strong: rgba(255, 255, 255, 0.1);
+  --color-timeline: rgba(255, 255, 255, 0.3);
   --accent: #f5f5f5;
   --inner-bg: #252525;
   --bg: var(--color-bg);
@@ -72,8 +74,8 @@ html.dark {
   }
 
   .surface-card:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0 32px 60px rgba(0, 0, 0, 0.08);
+    transform: translateY(-0.2rem);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.06);
     border-color: var(--color-border-strong);
   }
 
@@ -423,8 +425,7 @@ html.dark .thumbnail {
 
 .timeline-marker {
   position: absolute;
-  left: -2rem;
-  top: 0.5rem;
+  /* top: 1rem; */
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -432,7 +433,7 @@ html.dark .thumbnail {
   border: 3px solid var(--color-bg);
   box-shadow: 0 0 0 2px var(--color-border);
   z-index: 1;
-  left: 0.9rem;
+  left: -0.4rem;
 }
 
 .timeline-marker--current {
