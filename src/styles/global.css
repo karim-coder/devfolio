@@ -1,47 +1,94 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
-/* Tailwind component: surface-card
-   Uses @apply so Tailwind includes these utilities as a named component.
-*/
+/* Neutral surface component styles (replaces earlier Tailwind @apply mapping). */
 @layer components {
   .surface-card {
-    /* `group` is a marker utility (no CSS) and cannot be @apply'ed; keep it as a class on the wrapper when needed. */
-    /* Use a slightly darker dark background to reduce the 'too white' appearance in dark mode. */
-    @apply relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900/80 p-6 md:p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    transition: transform 300ms ease, box-shadow 300ms ease,
+      border-color 300ms ease, background-color 300ms ease;
+    will-change: transform;
+  }
+
+  @media (min-width: 768px) {
+    .surface-card {
+      padding: 2rem;
+    }
+  }
+
+  .surface-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 32px 60px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-border-strong);
   }
 
   /* compact variant used for smaller cards (timeline, skill boxes, etc.) */
   .surface-card-sm {
-    @apply w-full relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900/85 p-5 shadow-sm transition-colors duration-200;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 1.25rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: background-color 200ms ease, border-color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .surface-card-sm:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.06);
   }
 
   /* contact / action card variant keeps layout utilities on the element (flex, spacing)
      so we only provide surface visuals here. Keep adding `group` on the element when
      child `group-hover:` rules are needed. */
   .surface-card-contact {
-    @apply rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900/85 p-5 transition-all duration-300 hover:border-gray-500 dark:hover:border-gray-500;
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 1.25rem;
+    transition: border-color 300ms ease, background-color 300ms ease,
+      transform 300ms ease;
+  }
+
+  .surface-card-contact:hover {
+    border-color: var(--color-border-strong);
   }
 
   .cheep {
-    @apply inline-block px-3 py-1 rounded-full text-sm font-medium font-mono bg-gray-100 border border-gray-200 text-gray-700;
+    display: inline-block;
+    /* slightly smaller than before: modestly increased padding for better spacing */
+    padding: 0.1875rem 0.625rem; /* ~3px 10px */
+    border-radius: 1rem;
+    font-size: 0.84375rem; /* ~13.5px - slightly larger for readability */
+    line-height: 1;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.01em;
+    border: 1px solid var(--color-chip-border);
+    background-color: var(--color-chip-bg);
+    color: var(--color-text-tertiary);
   }
 
   /* Large variant (rounded-lg + monospace small text) used in skill lists */
   .cheep-lg {
-    @apply px-3 py-1 rounded-lg text-sm font-medium font-mono bg-gray-100 text-gray-700;
-  }
-
-  html.dark .cheep {
-    /* Dark-mode appearance: keep chips readable but subtle */
-    background-color: rgba(255, 255, 255, 0.06); /* subtle light tint */
-    border-color: rgba(255, 255, 255, 0.08);
-    color: rgb(235, 235, 235);
-  }
-
-  html.dark .cheep-lg {
-    background-color: rgba(255, 255, 255, 0.06);
-    color: rgb(235, 235, 235);
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.01em;
+    background-color: var(--color-chip-bg);
+    border: 1px solid var(--color-chip-border);
+    color: var(--color-text-tertiary);
   }
 }
 
@@ -53,18 +100,45 @@
     sans-serif;
   --font-display: "Manrope", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  /* Custom color variables */
-  --accent: #333333; /* neutral dark gray */
-  --bg: #ffffff; /* white */
-  --border: #c6c6c6; /* gray-200 */
+  /* Neutral color system */
+  --color-bg: #fdfdfd;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f5f5f5;
+  --color-text-primary: #111111;
+  --color-text-secondary: #2d2d2d;
+  --color-text-tertiary: #4a4a4a;
+  --color-text-quaternary: #6b6b6b;
+  --color-border: rgba(17, 17, 17, 0.08);
+  --color-border-strong: rgba(17, 17, 17, 0.18);
+  --color-chip-bg: rgba(17, 17, 17, 0.02);
+  --color-chip-border: rgba(17, 17, 17, 0.12);
+  --color-header-bg: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  --color-header-border: rgba(17, 17, 17, 0.12);
+  --color-backdrop-strong: rgba(17, 17, 17, 0.08);
+  --accent: #111111;
+  --bg: var(--color-bg);
+  --border: var(--color-border);
 }
 
 html.dark {
   color-scheme: dark;
-  /* Dark mode color variables */
-  --accent: #ffffff; /* neutral light gray */
-  --bg: #000000; /* gray-800 */
-  --border: #374151; /* gray-700 */
+  --color-bg: #080808;
+  --color-surface: rgba(18, 18, 18, 0.92);
+  --color-surface-subtle: rgba(26, 26, 26, 0.85);
+  --color-text-primary: #f2f2f2;
+  --color-text-secondary: #d5d5d5;
+  --color-text-tertiary: #b4b4b4;
+  --color-text-quaternary: #949494;
+  --color-border: rgba(255, 255, 255, 0.16);
+  --color-border-strong: rgba(255, 255, 255, 0.24);
+  --color-chip-bg: rgba(255, 255, 255, 0.08);
+  --color-chip-border: rgba(255, 255, 255, 0.14);
+  --color-header-bg: color-mix(in srgb, var(--color-surface) 80%, transparent);
+  --color-header-border: rgba(255, 255, 255, 0.18);
+  --color-backdrop-strong: rgba(255, 255, 255, 0.1);
+  --accent: #f5f5f5;
+  --bg: var(--color-bg);
+  --border: var(--color-border);
 }
 
 /* Utility font classes (used in templates) */
@@ -88,145 +162,106 @@ html.dark {
 /* ===== Dark Mode Text Color Fixes ===== */
 html.dark .dark\:text-white,
 html.dark .text-white {
-  color: rgb(232, 232, 232);
+  color: var(--color-text-primary);
 }
 
 html.dark .dark\:text-gray-300,
 html.dark .text-gray-300 {
-  color: rgb(210, 210, 210);
+  color: var(--color-text-secondary);
 }
 
 html.dark .dark\:text-gray-400,
 html.dark .text-gray-400 {
-  color: rgb(190, 190, 190);
+  color: var(--color-text-tertiary);
 }
 
 html.dark .dark\:text-gray-500,
 html.dark .text-gray-500 {
-  color: rgb(168, 168, 168);
+  color: var(--color-text-quaternary);
 }
 
 html.dark p:not([class*="text-"]),
 html.dark span:not([class*="text-"]),
 html.dark li:not([class*="text-"]) {
-  color: rgb(214, 214, 214);
+  color: var(--color-text-secondary);
 }
 
 /* ===== Dark Mode Background Fixes ===== */
 html.dark .dark\:bg-gray-800,
-html.dark .bg-white {
-  background-color: rgb(40, 40, 40);
-}
-
 html.dark .dark\:bg-gray-900,
+html.dark .dark\:bg-neutral-950,
+html.dark .dark\:bg-neutral-900,
+html.dark .dark\:bg-neutral-800,
+html.dark .bg-white,
 html.dark .bg-gray-900 {
-  background-color: rgb(32, 32, 32);
+  background-color: var(--color-surface);
 }
 
 html.dark .bg-gray-50,
 html.dark .bg-gray-100 {
-  background-color: rgb(48, 48, 48);
-}
-
-html.dark .dark\:bg-neutral-950 {
-  background-color: rgb(28, 28, 28);
-}
-
-html.dark .dark\:bg-neutral-900 {
-  background-color: rgb(36, 36, 36);
-}
-
-html.dark .dark\:bg-neutral-800 {
-  background-color: rgb(46, 46, 46);
+  background-color: var(--color-surface-subtle);
 }
 
 /* ===== Dark Mode Border Fixes ===== */
 html.dark .dark\:border-gray-700,
-html.dark .border-gray-200 {
-  border-color: rgb(70, 70, 70);
-}
-
+html.dark .border-gray-200,
 html.dark .dark\:border-gray-800 {
-  border-color: rgb(52, 52, 52);
+  border-color: var(--color-border);
 }
 
 /* ===== Dark Mode Badge/Tag Fixes ===== */
 html.dark .bg-blue-50,
-html.dark .dark\:bg-blue-900\/30 {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: rgb(235, 235, 235);
-}
-
-html.dark .dark\:text-blue-300 {
-  color: rgb(235, 235, 235);
-}
-
+html.dark .dark\:bg-blue-900\/30,
 html.dark .bg-yellow-50,
-html.dark .dark\:bg-yellow-900\/30 {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: rgb(235, 235, 235);
-}
-
-html.dark .dark\:text-yellow-300 {
-  color: rgb(235, 235, 235);
-}
-
+html.dark .dark\:bg-yellow-900\/30,
 html.dark .bg-green-50,
-html.dark .dark\:bg-green-900\/30 {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: rgb(235, 235, 235);
-}
-
-html.dark .dark\:text-green-400 {
-  color: rgb(235, 235, 235);
-}
-
+html.dark .dark\:bg-green-900\/30,
 html.dark .bg-purple-50,
 html.dark .dark\:bg-purple-900\/30 {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: rgb(235, 235, 235);
+  background-color: var(--color-chip-bg);
+  color: var(--color-text-secondary);
 }
 
+html.dark .dark\:text-blue-300,
+html.dark .dark\:text-yellow-300,
+html.dark .dark\:text-green-400,
 html.dark .dark\:text-purple-400 {
-  color: rgb(235, 235, 235);
+  color: var(--color-text-secondary);
 }
 
 /* ===== Light Mode Text Color Fixes ===== */
 html:not(.dark) .dark\:text-white,
 html:not(.dark) .text-gray-900 {
-  color: rgb(17, 24, 39);
+  color: var(--color-text-primary);
 }
 
-html:not(.dark) .text-gray-600 {
-  color: rgb(37, 47, 63);
+html:not(.dark) .text-gray-600,
+html:not(.dark) .dark\:text-gray-300 {
+  color: var(--color-text-tertiary);
 }
 
 html:not(.dark) p:not([class*="text-"]),
 html:not(.dark) span:not([class*="text-"]),
 html:not(.dark) li:not([class*="text-"]) {
-  color: rgb(37, 47, 63);
-}
-
-html:not(.dark) .dark\:text-gray-300 {
-  color: rgb(37, 47, 63);
+  color: var(--color-text-secondary);
 }
 
 html:not(.dark) .dark\:text-gray-400 {
-  color: rgb(66, 76, 94);
+  color: var(--color-text-quaternary);
 }
 
 /* ===== Light Mode Background Fixes ===== */
 html:not(.dark) .bg-white {
-  background-color: rgb(255, 255, 255);
-  color: rgb(17, 24, 39);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
 }
 
 html:not(.dark) .dark\:bg-gray-800 {
-  background-color: rgb(249, 250, 251);
+  background-color: var(--color-surface-subtle);
 }
 
 html:not(.dark) .dark\:bg-gray-900 {
-  background-color: rgb(249, 250, 251);
+  background-color: var(--color-surface-subtle);
 }
 
 /* ===== Light Mode Border Fixes ===== */
@@ -237,68 +272,46 @@ html:not(.dark) .dark\:bg-gray-900 {
 /* ===== Light Mode Badge/Tag Fixes ===== */
 html:not(.dark) .bg-blue-50,
 html:not(.dark) .dark\:bg-blue-900\/30 {
-  background-color: rgb(239, 246, 255);
-  color: rgb(30, 64, 175);
+  background-color: var(--color-chip-bg);
+  color: var(--color-text-tertiary);
 }
 
-html:not(.dark) .dark\:text-blue-300 {
-  color: rgb(30, 64, 175);
-}
-
-html:not(.dark) .bg-yellow-50 {
-  background-color: rgb(254, 252, 232);
-  color: rgb(113, 63, 18);
-}
-
-html:not(.dark) .dark\:text-yellow-300 {
-  color: rgb(113, 63, 18);
-}
-
-html:not(.dark) .bg-green-50 {
-  background-color: rgb(240, 253, 244);
-  color: rgb(22, 101, 52);
-}
-
-html:not(.dark) .dark\:text-green-400 {
-  color: rgb(22, 101, 52);
-}
-
+html:not(.dark) .bg-yellow-50,
+html:not(.dark) .bg-green-50,
 html:not(.dark) .bg-purple-50 {
-  background-color: rgb(250, 245, 255);
-  color: rgb(107, 33, 168);
+  background-color: var(--color-chip-bg);
+  color: var(--color-text-tertiary);
 }
 
+html:not(.dark) .dark\:text-blue-300,
+html:not(.dark) .dark\:text-yellow-300,
+html:not(.dark) .dark\:text-green-400,
 html:not(.dark) .dark\:text-purple-400 {
-  color: rgb(107, 33, 168);
+  color: var(--color-text-tertiary);
 }
 
 /* ===== Navbar (light mode) ===== */
 header {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  /* use a clearer light-mode border (gray-300) so it shows on white backgrounds */
-  border-color: rgb(209, 213, 219) !important;
-  /* subtle shadow to separate header from page content */
-  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.04);
+  background-color: var(--color-header-bg) !important;
+  border-color: var(--color-header-border) !important;
+  box-shadow: 0 1px 0 var(--color-backdrop-strong);
 }
 
-header a {
-  color: rgb(17, 24, 39) !important;
-}
-
+header a,
 header .font-bold {
-  color: rgb(17, 24, 39) !important;
+  color: var(--color-text-primary) !important;
 }
 
 header .text-gray-600 {
-  color: rgb(75, 85, 99) !important;
+  color: var(--color-text-tertiary) !important;
 }
 
 header .text-gray-600:hover {
-  color: rgb(17, 24, 39) !important;
+  color: var(--color-text-primary) !important;
 }
 
 header svg {
-  color: rgb(17, 24, 39) !important;
+  color: var(--color-text-primary) !important;
 }
 
 header button {
@@ -306,42 +319,37 @@ header button {
 }
 
 header button:hover {
-  background-color: rgb(243, 244, 246) !important;
+  background-color: var(--color-chip-bg) !important;
 }
 
 /* ===== Dark Mode Navbar ===== */
 html.dark header {
-  /* Force a dark, slightly translucent backdrop and ensure blur applies in dark mode.
-     Use !important to override utility classes that may still set a light background. */
-  background-color: rgba(28, 28, 28, 0) !important;
+  background-color: var(--color-header-bg) !important;
   background-image: none !important;
-  border-color: rgb(68, 68, 68) !important;
+  border-color: var(--color-header-border) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
 }
 
-html.dark header a {
-  color: rgb(248, 250, 252) !important;
-}
-
+html.dark header a,
 html.dark header .font-bold {
-  color: rgb(248, 250, 252) !important;
+  color: var(--color-text-primary) !important;
 }
 
 html.dark header .text-gray-600 {
-  color: rgb(200, 200, 200) !important;
+  color: var(--color-text-tertiary) !important;
 }
 
 html.dark header .text-gray-600:hover {
-  color: rgb(248, 250, 252) !important;
+  color: var(--color-text-primary) !important;
 }
 
 html.dark header svg {
-  color: rgb(248, 250, 252) !important;
+  color: var(--color-text-primary) !important;
 }
 
 html.dark header button:hover {
-  background-color: rgb(46, 46, 46) !important;
+  background-color: var(--color-chip-bg) !important;
 }
 
 /* Shared surface tokens moved into Tailwind component layer above.
@@ -354,30 +362,30 @@ html.dark header button:hover {
    are intentionally low-specificity and conservative; they can be removed
    later if you prefer relying purely on generated Tailwind CSS. */
 .surface-card {
-  background-color: rgb(255, 255, 255);
-  border-color: rgba(17, 17, 17, 0.08);
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
 }
 .surface-card-sm {
-  background-color: rgb(255, 255, 255);
-  border-color: rgba(17, 17, 17, 0.08);
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
 }
 .surface-card-contact {
-  background-color: rgb(255, 255, 255);
-  border-color: rgba(17, 17, 17, 0.08);
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
 }
 
 /* Dark-mode overrides — slightly darker than before to reduce glare */
 html.dark .surface-card {
-  background-color: rgba(17, 17, 17, 0.8);
-  border-color: rgba(255, 255, 255, 0.14);
+  background-color: var(--color-surface-subtle);
+  border-color: var(--color-border);
 }
 html.dark .surface-card-sm {
-  background-color: rgba(17, 17, 17, 0.85);
-  border-color: rgba(255, 255, 255, 0.14);
+  background-color: var(--color-surface-subtle);
+  border-color: var(--color-border);
 }
 html.dark .surface-card-contact {
-  background-color: rgba(17, 17, 17, 0.85);
-  border-color: rgba(255, 255, 255, 0.14);
+  background-color: var(--color-surface-subtle);
+  border-color: var(--color-border);
 }
 
 /* Section divider utility
@@ -387,63 +395,65 @@ html.dark .surface-card-contact {
 .section-divider {
   border-top-width: 1px;
   border-top-style: solid;
-  /* subtle, cool-toned border in light mode to avoid looking too dark */
-  border-top-color: rgba(17, 24, 39, 0.1);
+  border-top-color: var(--color-border);
 }
 
 html.dark .section-divider {
-  /* preserve the previously-used dark border */
-  border-top-color: rgb(52, 52, 52);
+  border-top-color: var(--color-border);
 }
 
 .section-vertical-divider {
-  background-color: rgba(17, 24, 39, 0.2);
+  background-color: var(--color-border-strong);
 }
 
 html.dark .section-vertical-divider {
-  background-color: rgb(70, 70, 70);
+  background-color: var(--color-border-strong);
 }
 
-/* Timeline dot used in experience timeline items. Light mode uses a soft
-/* Timeline dot - double circle design */
+/* Timeline dot used in experience timeline items (double-circle design) */
 .timeline-dot-outer {
-  border-color: rgb(156, 163, 175); /* gray-400 */
+  border-color: var(--color-border-strong);
   transition: border-color 180ms ease, transform 180ms ease,
     box-shadow 180ms ease;
   box-shadow: none;
 }
 
-html.dark .timeline-dot-outer {
-  border-color: rgb(107, 114, 128); /* gray-500 */
-}
-
 .timeline-dot-inner {
-  background-color: rgb(229, 231, 235); /* gray-200 */
-  margin: 1px; /* center the inner circle */
-}
-
-html.dark .timeline-dot-inner {
-  background-color: rgb(55, 65, 81); /* gray-700 */
+  background-color: var(--color-chip-bg);
+  margin: 1px;
 }
 
 /* Current timeline item - enhanced double circle */
 .timeline-dot-outer--current {
-  border-color: rgb(156, 163, 175); /* gray-400 - less dark */
+  border-color: var(--color-text-tertiary);
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-html.dark .timeline-dot-outer--current {
-  border-color: rgb(156, 163, 175); /* gray-400 - less white */
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px var(--color-backdrop-strong);
 }
 
 .timeline-dot-inner--current {
-  background-color: rgb(31, 41, 55); /* gray-800 */
+  background-color: var(--color-text-tertiary);
+  background-color: color-mix(
+    in srgb,
+    var(--color-text-primary) 85%,
+    transparent
+  );
+}
+
+html.dark .timeline-dot-inner {
+  background-color: var(--color-surface-subtle);
+  background-color: color-mix(
+    in srgb,
+    var(--color-surface) 70%,
+    var(--color-bg) 30%
+  );
+}
+
+html.dark .timeline-dot-outer--current {
+  box-shadow: 0 4px 12px var(--color-backdrop-strong);
 }
 
 html.dark .timeline-dot-inner--current {
-  background-color: rgb(243, 244, 246); /* gray-100 */
+  background-color: var(--color-text-primary);
 }
 
 .project-card:hover .arrow-icon {
@@ -462,9 +472,9 @@ html.dark .timeline-dot-inner--current {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--bg);
-  border: 3px solid var(--bg);
-  box-shadow: 0 0 0 2px var(--border);
+  background: var(--color-bg);
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 0 0 2px var(--color-border);
   z-index: 1;
   left: 0.9rem;
 }
