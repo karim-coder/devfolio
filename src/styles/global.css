@@ -46,9 +46,6 @@
     box-shadow: 0 18px 32px rgba(0, 0, 0, 0.06);
   }
 
-  /* contact / action card variant keeps layout utilities on the element (flex, spacing)
-     so we only provide surface visuals here. Keep adding `group` on the element when
-     child `group-hover:` rules are needed. */
   .surface-card-contact {
     border-radius: 1rem;
     border: 1px solid var(--color-border);
@@ -189,15 +186,11 @@ html.dark li:not([class*="text-"]) {
 /* ===== Dark Mode Background Fixes ===== */
 html.dark .dark\:bg-gray-800,
 html.dark .dark\:bg-gray-900,
-html.dark .dark\:bg-neutral-950,
-html.dark .dark\:bg-neutral-900,
-html.dark .dark\:bg-neutral-800,
 html.dark .bg-white,
 html.dark .bg-gray-900 {
   background-color: var(--color-surface);
 }
 
-html.dark .bg-gray-50,
 html.dark .bg-gray-100 {
   background-color: var(--color-surface-subtle);
 }
@@ -207,26 +200,6 @@ html.dark .dark\:border-gray-700,
 html.dark .border-gray-200,
 html.dark .dark\:border-gray-800 {
   border-color: var(--color-border);
-}
-
-/* ===== Dark Mode Badge/Tag Fixes ===== */
-html.dark .bg-blue-50,
-html.dark .dark\:bg-blue-900\/30,
-html.dark .bg-yellow-50,
-html.dark .dark\:bg-yellow-900\/30,
-html.dark .bg-green-50,
-html.dark .dark\:bg-green-900\/30,
-html.dark .bg-purple-50,
-html.dark .dark\:bg-purple-900\/30 {
-  background-color: var(--color-chip-bg);
-  color: var(--color-text-secondary);
-}
-
-html.dark .dark\:text-blue-300,
-html.dark .dark\:text-yellow-300,
-html.dark .dark\:text-green-400,
-html.dark .dark\:text-purple-400 {
-  color: var(--color-text-secondary);
 }
 
 /* ===== Light Mode Text Color Fixes ===== */
@@ -264,33 +237,6 @@ html:not(.dark) .dark\:bg-gray-900 {
   background-color: var(--color-surface-subtle);
 }
 
-/* ===== Light Mode Border Fixes ===== */
-/* Removed: mapping dark: border utilities into light mode caused light-theme elements to get very faint borders
-   and override explicit light-mode border classes (e.g. border-gray-300). Let Tailwind's utility classes
-   apply directly instead to avoid unintended overrides. */
-
-/* ===== Light Mode Badge/Tag Fixes ===== */
-html:not(.dark) .bg-blue-50,
-html:not(.dark) .dark\:bg-blue-900\/30 {
-  background-color: var(--color-chip-bg);
-  color: var(--color-text-tertiary);
-}
-
-html:not(.dark) .bg-yellow-50,
-html:not(.dark) .bg-green-50,
-html:not(.dark) .bg-purple-50 {
-  background-color: var(--color-chip-bg);
-  color: var(--color-text-tertiary);
-}
-
-html:not(.dark) .dark\:text-blue-300,
-html:not(.dark) .dark\:text-yellow-300,
-html:not(.dark) .dark\:text-green-400,
-html:not(.dark) .dark\:text-purple-400 {
-  color: var(--color-text-tertiary);
-}
-
-/* ===== Navbar (light mode) ===== */
 header {
   background-color: var(--color-header-bg) !important;
   border-color: var(--color-header-border) !important;
@@ -352,15 +298,6 @@ html.dark header button:hover {
   background-color: var(--color-chip-bg) !important;
 }
 
-/* Shared surface tokens moved into Tailwind component layer above.
-   The raw fallbacks were removed to avoid duplicate/conflicting rules.
-   If you need non-Tailwind fallbacks for environments that don't run Tailwind,
-   we can add a small set of conservative CSS here. */
-
-/* Light-mode fallbacks for surface utility classes to ensure correct
-   appearance even if Tailwind utilities are missing or overridden. These
-   are intentionally low-specificity and conservative; they can be removed
-   later if you prefer relying purely on generated Tailwind CSS. */
 .surface-card {
   background-color: var(--color-surface);
   border-color: var(--color-border);
@@ -388,10 +325,6 @@ html.dark .surface-card-contact {
   border-color: var(--color-border);
 }
 
-/* Section divider utility
-   Use this on page sections instead of repeating Tailwind utilities so we
-   control the light-mode border color (subtle) while keeping a stronger
-   contrast in dark mode. Applied as `class="... section-divider"`. */
 .section-divider {
   border-top-width: 1px;
   border-top-style: solid;
