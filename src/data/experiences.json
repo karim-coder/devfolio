@@ -26,6 +26,7 @@
     "id": "frontend-developer-startup",
     "title": "Frontend Developer, Tech Startup",
     "period": "2021 — 2022",
+    "first": true,
     "bullets": [
       "Developed responsive web applications using React and TypeScript",
       "Collaborated with design team to implement pixel-perfect UIs",
