@@ -1,13 +1,15 @@
 ---
 // Props: social: { type, href, label, display, external, ariaLabel }
 const { social } = Astro.props;
+const target = social.external ? "_blank" : undefined;
+const rel = social.external ? "noopener noreferrer" : undefined;
 ---
 
 <a
   href={social.href}
-  class="group flex items-center gap-4 surface-card-contact p-4"
-  target={social.external ? "_blank" : undefined}
-  rel={social.external ? "noopener noreferrer" : undefined}
+  class="group flex items-center gap-4 surface-card-contact p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-border-strong)]"
+  target={target}
+  rel={rel}
   aria-label={social.ariaLabel || social.label}
 >
   <div

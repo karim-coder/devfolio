@@ -10,6 +10,31 @@ interface Props {
   };
 }
 const { experience } = Astro.props as Props;
+const timelineLineClasses = [
+  "absolute",
+  "left-2",
+  experience.current ? "top-2" : "top-0",
+  "bottom-0",
+  "w-0.5",
+  "opacity-30",
+  "dark:opacity-40",
+];
+const markerClassList = [
+  "absolute",
+  "left-2",
+  "top-2",
+  "w-3",
+  "h-3",
+  "-ml-1.5",
+  "rounded-full",
+  "z-10",
+  "transition-all",
+  "duration-300",
+  "border-[3px]",
+];
+const markerStyles = experience.current
+  ? "background: var(--accent); border-color: var(--color-bg); box-shadow: 0 0 0 2px var(--color-timeline);"
+  : "background: var(--color-bg); border-color: var(--color-bg); box-shadow: 0 0 0 2px var(--color-timeline);";
 ---
 
 <article
@@ -18,7 +43,7 @@ const { experience } = Astro.props as Props;
 >
   <!-- Modern Timeline with Solid Line -->
   <div
-    class=`absolute left-2 ${experience.current ? "top-2" : "top-0"}  bottom-0 w-0.5 opacity-30 dark:opacity-40`
+    class:list={timelineLineClasses}
     style="background: var(--color-timeline);"
     role="presentation"
   >
@@ -33,7 +58,7 @@ const { experience } = Astro.props as Props;
       viewBox="0 0 48 48"
       class="w-full h-full"
       fill="none"
-      stroke="var( --color-timeline)"
+      stroke="var(--color-timeline)"
       stroke-width="2"
     >
       <path d="M 2 2 Q 2 24 24 24 L 48 24" stroke-linecap="round"></path>
@@ -41,15 +66,7 @@ const { experience } = Astro.props as Props;
   </div>
 
   <!-- Timeline Marker -->
-  <div
-    class={`absolute left-2 top-2 w-3 h-3 -ml-1.5 rounded-full z-10 transition-all duration-300 ${
-      experience.current ? "border-[3px]" : "border-[3px]"
-    }`}
-    style={experience.current
-      ? "background: var(--accent); border-color: var(--color-bg); box-shadow: 0 0 0 2px var( --color-timeline);"
-      : "background: var(--color-bg); border-color: var(--color-bg); box-shadow: 0 0 0 2px var( --color-timeline);"}
-    role="presentation"
-  >
+  <div class:list={markerClassList} style={markerStyles} role="presentation">
   </div>
 
   <!-- Card Content with Elegant Shadow -->

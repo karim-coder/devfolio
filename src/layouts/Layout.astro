@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <meta
+      name="description"
+      content="Karim Amiri is a software engineer crafting resilient web and mobile experiences across fintech, AI, and healthcare."
+    />
+    <title>Karim Amiri · Software Engineer</title>
   </head>
-  <body>
+  <body class="bg-page text-primary font-sans antialiased">
     <slot />
   </body>
 </html>
@@ -20,5 +24,9 @@
     height: 100%;
     background-color: var(--color-bg);
     color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
   }
 </style>
