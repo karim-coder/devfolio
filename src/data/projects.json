@@ -6,7 +6,8 @@
     "year": 2024,
     "description": "Real-time trading platform featuring WebSocket infrastructure, risk analytics, and compliance workflows for regulated markets handling 10K+ concurrent connections.",
     "tags": ["React", "Node.js", "PostgreSQL", "WebSocket"],
-    "href": "#"
+    "href": "#",
+    "thumbnail": "https://www.shutterstock.com/image-photo/project-managers-work-new-idea-600nw-2343099769.jpg"
   },
   {
     "id": "mind-reader",
