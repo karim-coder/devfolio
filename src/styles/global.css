@@ -305,6 +305,12 @@ html.dark header {
   background-color: var(--color-surface-subtle);
 }
 
+.thumbnail-mobile {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-surface-subtle);
+}
+
 .timeline-marker {
   position: absolute;
   /* top: 1rem; */
